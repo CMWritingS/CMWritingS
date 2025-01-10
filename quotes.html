@@ -190,18 +190,44 @@
         <ul>
             <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
             <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Devotional</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Drinking</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('caronaGallery'); fetchAndLoadImages('caronaGallery', 'carona')">Carona</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('casteGallery'); fetchAndLoadImages('casteGallery', 'caste')">Caste</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('deathGallery'); fetchAndLoadImages('deathGallery', 'death')">Death</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('factSpecialGallery'); fetchAndLoadImages('factSpecialGallery', 'fact_special')">Fact Special</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('factsGallery'); fetchAndLoadImages('factsGallery', 'facts')">Facts</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('familyGallery'); fetchAndLoadImages('familyGallery', 'family')">FAMILY</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('fearGallery'); fetchAndLoadImages('fearGallery', 'fear')">Fear</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('festivalsGallery'); fetchAndLoadImages('festivalsGallery', 'festivals')">Festivals</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('hummanityGallery'); fetchAndLoadImages('hummanityGallery', 'hummanity')">Hummanity</a></li>
         </ul>
     </div>
-
-    <div id="loveGallery" class="gallery"></div>
-    <div id="lifeGallery" class="gallery"></div>
-    <div id="happinessGallery" class="gallery"></div>
-    <div id="natureGallery" class="gallery"></div>
-
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightboxImage" src="" alt="">
+    <div class="category-menu">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('inspirationGallery'); fetchAndLoadImages('inspirationGallery', 'inspiration')">INSPIRATION</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('lifeSplGallery'); fetchAndLoadImages('lifeSplGallery', 'life_spl')">Life Spl</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('listOfDaysGallery'); fetchAndLoadImages('listOfDaysGallery', 'list_of_days')">List of Days</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('lovePoetryGallery'); fetchAndLoadImages('lovePoetryGallery', 'love_poetry')">LOVE POETRY</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('loveSplGallery'); fetchAndLoadImages('loveSplGallery', 'love_spl')">Love Spl</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('mensGallery'); fetchAndLoadImages('mensGallery', 'mens')">MENS</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('moneyGallery'); fetchAndLoadImages('moneyGallery', 'money')">MONEY</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('moralsGallery'); fetchAndLoadImages('moralsGallery', 'morals')">MORALS</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('parentsGallery'); fetchAndLoadImages('parentsGallery', 'parents')">PARENTS</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('realitySplGallery'); fetchAndLoadImages('realitySplGallery', 'reality_spl')">Reality Spl</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('relationGallery'); fetchAndLoadImages('relationGallery', 'relation')">RELATION</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('selfishGallery'); fetchAndLoadImages('selfishGallery', 'selfish')">SELFISH</a></li>
+        </ul>
+    </div>
+    <div class="category-menu">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('smileGallery'); fetchAndLoadImages('smileGallery', 'smile')">Smile</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('socialIssuesQuotesGallery'); fetchAndLoadImages('socialIssuesQuotesGallery', 'social_issues_quotes')">Social Issues Quotes</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('specialWritingsGallery'); fetchAndLoadImages('specialWritingsGallery', 'special_writings')">SPECIAL WRITINGS</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('tearsGallery'); fetchAndLoadImages('tearsGallery', 'tears')">Tears</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('womenAndChildGallery'); fetchAndLoadImages('womenAndChildGallery', 'women_and_child')">Women and Child</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('writingsOfLovePoetryGallery'); fetchAndLoadImages('writingsOfLovePoetryGallery', 'writings_of_love_poetry')">Writings of Love Poetry</a></li>
+        </ul>
     </div>
     <div class="category">
         <h2 >
@@ -209,204 +235,41 @@
         </h2>
         <div></div>
     </div>
-<!-- Category Sections with Image Galleries 
-<div class="category">
-    <h2 onclick="toggleGallery('loveGallery')">
-        Love (<a href="https://www.youtube.com/watch?v=zHiKFSBO_JE" target="_blank">Watch Video</a>)
-    </h2>
-    <div class="gallery" id="loveGallery" style="display: none;"></div>
-</div>
-
-<div class="category">
-    <h2 onclick="toggleGallery('lifeGallery')">Life</h2>
-    <div class="gallery" id="lifeGallery" style="display: none;"></div>
-</div>
-
-<div class="category">
-    <h2 onclick="toggleGallery('happinessGallery')">Happiness</h2>
-    <div class="gallery" id="happinessGallery" style="display: none;"></div>
-</div>
-
-<div class="category">
-    <h2 onclick="toggleGallery('natureGallery')">Nature</h2>
-    <div class="gallery" id="natureGallery" style="display: none;"></div>
-</div>
-
-<!-- Lightbox Modal 
-<div id="lightboxModal" class="lightbox-modal" style="display: none;">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img class="lightbox-modal-content" id="lightboxImage" />
-    <div id="caption"></div>
-</div>
-
-<script>
-    // Function to toggle the visibility of a gallery.
-    function toggleGallery(galleryId) {
-        const gallery = document.getElementById(galleryId);
-        gallery.style.display = gallery.style.display === "none" ? "block" : "none";
-    }
-
-    // Function to fetch images from the server and display them in the gallery.
-    async function fetchAndLoadImages(galleryId, category) {
-        const gallery = document.getElementById(galleryId);
-        
-        try {
-            // Fetch the image list from the server using the PHP file
-            const response = await fetch(`list_images.php?category=${category}`);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const images = await response.json();
-
-            if (images.error) {
-                console.error("Error:", images.error);
-                return;
-            }
-
-            // Dynamically create image elements for the gallery
-            images.forEach(image => {
-                const quoteDiv = document.createElement("div");
-                quoteDiv.className = "quote";
-
-                const img = document.createElement("img");
-                img.src = `images/2019/${category}/${image}`;
-                img.alt = image;
-                img.className = "gallery-image";
-                img.loading = "lazy"; 
-
-                img.onclick = function() {
-                    openLightbox(this.src, this.alt);
-                };
-
-                quoteDiv.appendChild(img);
-                gallery.appendChild(quoteDiv);
-            });
-        } catch (error) {
-            console.error("Error loading images:", error);
-        }
-    }
-
-    // Open the lightbox with the clicked image
-    function openLightbox(src, alt) {
-        const modal = document.getElementById("lightboxModal");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const caption = document.getElementById("caption");
-
-        lightboxImage.src = src;
-        caption.textContent = alt;
-        modal.style.display = "block";
-    }
-
-    // Close the lightbox modal
-    function closeLightbox() {
-        const modal = document.getElementById("lightboxModal");
-        modal.style.display = "none";
-    }
-</script>
-
-<style>
-    /* Style for the category menu */
-    .category-menu {
-        margin-bottom: 20px;
-        background-color: #f8f9fa;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .category-menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .category-menu li {
-        display: inline;
-        margin: 0 15px;
-    }
-
-    .category-menu a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #007bff;
-        cursor: pointer;
-    }
-
-    .category-menu a:hover {
-        text-decoration: underline;
-    }
-
-    /* Lightbox Modal styles */
-    .lightbox-modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        overflow: auto;
-    }
-
-    .lightbox-modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-    }
-
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* Gallery styles */
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .quote {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Style for images in the gallery */
-    .gallery-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .gallery-image:hover {
-        transform: scale(1.1);
-    }
-</style>
-</div>
-            </div>
-        </div>
-    </section>
-    <!-- end quotes section -->
-
+    <div id="loveGallery" class="gallery"></div>
+    <div id="lifeGallery" class="gallery"></div>
+    <div id="happinessGallery" class="gallery"></div>
+    <div id="natureGallery" class="gallery"></div>
+    <div id="caronaGallery" class="gallery"></div>
+    <div id="casteGallery" class="gallery"></div>
+    <div id="deathGallery" class="gallery"></div>
+    <div id="factSpecialGallery" class="gallery"></div>
+    <div id="factsGallery" class="gallery"></div>
+    <div id="familyGallery" class="gallery"></div>
+    <div id="fearGallery" class="gallery"></div>
+    <div id="festivalsGallery" class="gallery"></div>
+    <div id="hummanityGallery" class="gallery"></div>
+    <div id="inspirationGallery" class="gallery"></div>
+    <div id="lifeSplGallery" class="gallery"></div>
+    <div id="listOfDaysGallery" class="gallery"></div>
+    <div id="lovePoetryGallery" class="gallery"></div>
+    <div id="loveSplGallery" class="gallery"></div>
+    <div id="mensGallery" class="gallery"></div>
+    <div id="moneyGallery" class="gallery"></div>
+    <div id="moralsGallery" class="gallery"></div>
+    <div id="parentsGallery" class="gallery"></div>
+    <div id="realitySplGallery" class="gallery"></div>
+    <div id="relationGallery" class="gallery"></div>
+    <div id="selfishGallery" class="gallery"></div>
+    <div id="smileGallery" class="gallery"></div>
+    <div id="socialIssuesQuotesGallery" class="gallery"></div>
+    <div id="specialWritingsGallery" class="gallery"></div>
+    <div id="tearsGallery" class="gallery"></div>
+    <div id="womenAndChildGallery" class="gallery"></div>
+    <div id="writingsOfLovePoetryGallery" class="gallery"></div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" src="" alt="">
+    </div>
+    
     <div class="footer_container">
         <!-- info section -->
         <section class="info_section ">
