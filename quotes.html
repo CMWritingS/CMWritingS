@@ -122,56 +122,209 @@
         <div class="container">
             <h1>CM Writings (<a href="https://www.youtube.com/@CmWritings" target="_blank">https://www.youtube.com/@CmWritings</a>)</h1>
 
-            <div class="category">
-                <h2 onclick="toggleGallery('loveGallery')">
-                    Love 
-                </h2>
-                <div class="gallery" id="loveGallery">
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Love Quote 1"></div>
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Love Quote 2"></div>
-                </div>
-            </div>
+            <!-- Category Menu -->
+<div class="category-menu">
+    <ul>
+        <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
+    </ul>
+</div>
 
-            <div class="category">
-                <h2 onclick="toggleGallery('lifeGallery')">
-                    Life
-                </h2>
-                <div class="gallery" id="lifeGallery">
-                    <div class="quote"><img src="images/slider-img.jpg" alt="life Quote 1"></div>
-                    <div class="quote"><img src="images/slider-img.jpg" alt="life Quote 2"></div>
-                </div>
-            </div>
+<!-- Category Sections with Image Galleries -->
+<div class="category">
+    <h2 onclick="toggleGallery('loveGallery')">
+        Love (<a href="https://www.youtube.com/watch?v=zHiKFSBO_JE" target="_blank">Watch Video</a>)
+    </h2>
+    <div class="gallery" id="loveGallery" style="display: none;"></div>
+</div>
 
+<div class="category">
+    <h2 onclick="toggleGallery('lifeGallery')">Life</h2>
+    <div class="gallery" id="lifeGallery" style="display: none;"></div>
+</div>
 
-            <div class="category">
-                <h2 onclick="toggleGallery('socialGallery')">
-                    Social 
-                </h2>
-                <div class="gallery" id="socialGallery">
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Social Quote 1"></div>
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Social Quote 2"></div>
-                </div>
-            </div>
+<div class="category">
+    <h2 onclick="toggleGallery('happinessGallery')">Happiness</h2>
+    <div class="gallery" id="happinessGallery" style="display: none;"></div>
+</div>
 
+<div class="category">
+    <h2 onclick="toggleGallery('natureGallery')">Nature</h2>
+    <div class="gallery" id="natureGallery" style="display: none;"></div>
+</div>
 
-            <div class="category">
-                <h2 onclick="toggleGallery('friendshipGallery')">
-                    Friendship 
-                </h2>
-                <div class="gallery" id="friendshipGallery">
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Friendship Quote 1"></div>
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Friendship Quote 2"></div>
-                </div>
-            </div>
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" style="display: none;">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-modal-content" id="lightboxImage" />
+    <div id="caption"></div>
+</div>
 
-            <div class="category">
-                <h2 onclick="toggleGallery('inspirationGallery')">
-                    Inspiration 
-                </h2>
-                <div class="gallery" id="inspirationGallery">
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Inspiration Quote 1"></div>
-                    <div class="quote"><img src="images/slider-img.jpg" alt="Inspiration Quote 2"></div>
-                </div>
+<script>
+    // Function to toggle the visibility of a gallery.
+    function toggleGallery(galleryId) {
+        const gallery = document.getElementById(galleryId);
+        gallery.style.display = gallery.style.display === "none" ? "block" : "none";
+    }
+
+    // Function to fetch images from the server and display them in the gallery.
+    async function fetchAndLoadImages(galleryId, category) {
+        const gallery = document.getElementById(galleryId);
+        
+        try {
+            // Fetch the image list from the server using the PHP file
+            const response = await fetch(`list_images.php?category=${category}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const images = await response.json();
+
+            if (images.error) {
+                console.error("Error:", images.error);
+                return;
+            }
+
+            // Dynamically create image elements for the gallery
+            images.forEach(image => {
+                const quoteDiv = document.createElement("div");
+                quoteDiv.className = "quote";
+
+                const img = document.createElement("img");
+                img.src = `images/2019/${category}/${image}`;
+                img.alt = image;
+                img.className = "gallery-image";
+                img.loading = "lazy"; 
+
+                img.onclick = function() {
+                    openLightbox(this.src, this.alt);
+                };
+
+                quoteDiv.appendChild(img);
+                gallery.appendChild(quoteDiv);
+            });
+        } catch (error) {
+            console.error("Error loading images:", error);
+        }
+    }
+
+    // Open the lightbox with the clicked image
+    function openLightbox(src, alt) {
+        const modal = document.getElementById("lightboxModal");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const caption = document.getElementById("caption");
+
+        lightboxImage.src = src;
+        caption.textContent = alt;
+        modal.style.display = "block";
+    }
+
+    // Close the lightbox modal
+    function closeLightbox() {
+        const modal = document.getElementById("lightboxModal");
+        modal.style.display = "none";
+    }
+</script>
+
+<style>
+    /* Style for the category menu */
+    .category-menu {
+        margin-bottom: 20px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .category-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .category-menu li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .category-menu a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #007bff;
+        cursor: pointer;
+    }
+
+    .category-menu a:hover {
+        text-decoration: underline;
+    }
+
+    /* Lightbox Modal styles */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: auto;
+    }
+
+    .lightbox-modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Gallery styles */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .quote {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Style for images in the gallery */
+    .gallery-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-image:hover {
+        transform: scale(1.1);
+    }
+</style>
+</div>
             </div>
         </div>
     </section>
