@@ -8,31 +8,16 @@ function fetchAndLoadImages(galleryId, category) {
     const gallery = document.getElementById(galleryId);
     gallery.innerHTML = ''; // Clear previous content
 
-    // Dynamically load all available images
-    fetch(`images/quotes/${category}/`).then(response => {
-        if (response.ok) {
-            return response.text();
-        } else {
-            console.error(`Failed to load images for category: ${category}`);
-            return '';
-        }
-    }).then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, "text/html");
-        const links = doc.querySelectorAll("a");
-
-        links.forEach(link => {
-            const href = link.getAttribute("href");
-            if (href && href.match(/\.jpg$/i)) {
-                const img = document.createElement('img');
-                img.src = `images/quotes/${category}/${href}`;
-                img.alt = `${category} image`;
-                img.onerror = () => console.warn(`Image not found: ${img.src}`);
-                img.onclick = () => openLightbox(img.src);
-                gallery.appendChild(img);
-            }
-        });
-    }).catch(error => console.error(`Error loading images: ${error}`));
+    // Dynamically load images based on the naming convention
+    const totalImages = 20; // Adjust based on the actual number of images available
+    for (let i = 1; i <= totalImages; i++) {
+        const img = document.createElement('img');
+        img.src = `images/quotes/${category}/${category}-image${i}.jpg`;
+        img.alt = `${category} image ${i}`;
+        img.onerror = () => console.warn(`Image not found: ${img.src}`);
+        img.onclick = () => openLightbox(img.src);
+        gallery.appendChild(img);
+    }
 }
 
 function openLightbox(src) {
