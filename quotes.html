@@ -127,23 +127,82 @@
                 </a>
             </marquee>
             <!-- Category Menu -->
-            <div class="category-menu">
-                <ul>
-                    <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
-                    <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
-                    <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
-                    <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
-                </ul>
-            </div>
-        
-            <div id="loveGallery" class="gallery"></div>
-            <div id="lifeGallery" class="gallery"></div>
-            <div id="happinessGallery" class="gallery"></div>
-            <div id="natureGallery" class="gallery"></div>
-        
-            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                <img id="lightboxImage" src="" alt="">
-            </div>
+            <title>Horizontal Menu with Lightbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .category-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #333;
+        }
+        .category-menu ul li {
+            margin: 0;
+        }
+        .category-menu ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .category-menu ul li a:hover {
+            background-color: #575757;
+        }
+        .gallery {
+            display: none;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox:target {
+            display: flex;
+        }
+    </style>
+    <script src="js/menu.js" defer></script>
+</head>
+<body>
+    <div class="category-menu">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
+        </ul>
+    </div>
+
+    <div id="loveGallery" class="gallery"></div>
+    <div id="lifeGallery" class="gallery"></div>
+    <div id="happinessGallery" class="gallery"></div>
+    <div id="natureGallery" class="gallery"></div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" src="" alt="">
+    </div>
 
 <!-- Category Sections with Image Galleries 
 <div class="category">
