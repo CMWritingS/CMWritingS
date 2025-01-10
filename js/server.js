@@ -1,30 +1,26 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
 // Serve static files
 app.use(express.static('public'));
 
-// API endpoint to fetch images
-app.get('/api/images/:category', (req, res) => {
-    const category = req.params.category;
-    const directoryPath = path.join(__dirname, `public/images/quotes/${category}`);
-    
-    fs.readdir(directoryPath, (err, files) => {
-        if (err) {
-            return res.status(500).send('Unable to scan directory: ' + err);
-        }
-        
-        // Filter only image files
-        const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
-        res.json(images);
-    });
+// List stories from the /stories folder
+app.get('/stories', (req, res) => {
+  const storiesDir = path.join(__dirname, 'stories');
+  fs.readdir(storiesDir, (err, files) => {
+    if (err) {
+      res.status(500).send('Error reading stories directory');
+      return;
+    }
+    const stories = files.filter(file => file.endsWith('.txt')); // Assuming stories are text files
+    res.json(stories);
+  });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });

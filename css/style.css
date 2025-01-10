@@ -92,7 +92,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: green;
+  background-color: indigo;
   border-radius: 0 0 350px 0;
 }
 
@@ -317,12 +317,12 @@ a:focus {
 .slider_section .detail-box .btn-box .btn1 {
   display: inline-block;
   padding: 12px 15px;
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid green;
+  border: 1px solid indigo;
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
@@ -439,7 +439,7 @@ a:focus {
 .service_section .box:hover::before {
   -webkit-transform: scale(5);
           transform: scale(5);
-  background-color: green;
+  background-color: indigo;
 }
 
 .service_section .box:hover img {
@@ -460,12 +460,12 @@ a:focus {
 .service_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid green;
+  border: 1px solid indigo;
 }
 
 .service_section .btn-box a:hover {
@@ -475,7 +475,7 @@ a:focus {
 }
 
 .about_section {
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 250px 0 250px 0;
 }
@@ -557,7 +557,7 @@ a:focus {
 }
 
 .case_section .box .detail-box a {
-  color: green;
+  color: indigo;
 }
 
 .client_section .box {
@@ -596,7 +596,7 @@ a:focus {
 
 .client_section .box .client_info .client_name h6 {
   margin-bottom: 0;
-  color: green;
+  color: indigo;
   font-weight: normal;
   font-size: 15px;
   text-transform: uppercase;
@@ -612,7 +612,7 @@ a:focus {
 
 .client_section .box .detail-box {
   background-color: #ffffff;
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 15px;
   padding: 85px 45px 15px 45px;
@@ -630,7 +630,7 @@ a:focus {
 }
 
 .client_section .carousel-indicators li {
-  background-color: green;
+  background-color: indigo;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -687,12 +687,12 @@ a:focus {
   font-family: "Poppins", sans-serif;
   display: inline-block;
   padding: 10px 65px;
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 3px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid green;
+  border: 1px solid indigo;
   color: #fff;
   margin-top: 10px;
 }
@@ -719,7 +719,7 @@ a:focus {
 }
 
 .footer_container {
-  background-color: green;
+  background-color: indigo;
   color: #ffffff;
   border-radius: 350px 0 0 0;
   padding-top: 145px;

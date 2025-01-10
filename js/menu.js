@@ -8,20 +8,16 @@ function fetchAndLoadImages(galleryId, category) {
     const gallery = document.getElementById(galleryId);
     gallery.innerHTML = ''; // Clear previous content
 
-    // Fetch image list from the server
-    fetch(`/api/images/${category}`)
-        .then(response => response.json())
-        .then(images => {
-            images.forEach(image => {
-                const img = document.createElement('img');
-                img.src = `images/quotes/${category}/${image}`;
-                img.alt = `${category} image`;
-                img.onerror = () => console.warn(`Image not found: ${img.src}`);
-                img.onclick = () => openLightbox(img.src);
-                gallery.appendChild(img);
-            });
-        })
-        .catch(error => console.error('Error loading images:', error));
+    // Dynamically load images based on the naming convention
+    const totalImages = 20000; // Adjust based on the actual number of images available
+    for (let i = 1; i <= totalImages; i++) {
+        const img = document.createElement('img');
+        img.src = `images/quotes/${category}/${category}-image${i}.jpg`;
+        img.alt = `${category} image ${i}`;
+        img.onerror = () => console.warn(`Image not found: ${img.src}`);
+        img.onclick = () => openLightbox(img.src);
+        gallery.appendChild(img);
+    }
 }
 
 function openLightbox(src) {
