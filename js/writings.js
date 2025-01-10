@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
         link: "quotes.html"
       },
       {
-        title: "Emotional Quotes",  // New Category
+        title: "loose motion Quotes",  // New Category
         description: "Following are the Emotional quotes",
         imgUrl: "images/slider-img.jpg",
         link: "quotes.html"
       },
       {
-        title: "loose motion Quotes",  // New Category
+        title: " Emotional Quotes",  // New Category
         description: "Following are the Emotional quotes",
         imgUrl: "images/slider-img.jpg",
         link: "quotes.html"
