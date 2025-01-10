@@ -127,14 +127,23 @@
                 </a>
             </marquee>
             <!-- Category Menu -->
-<div class="category-menu">
-    <ul>
-        <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
-    </ul>
-</div>
+            <div class="category-menu">
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
+                    <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
+                    <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Happiness</a></li>
+                    <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Nature</a></li>
+                </ul>
+            </div>
+        
+            <div id="loveGallery" class="gallery"></div>
+            <div id="lifeGallery" class="gallery"></div>
+            <div id="happinessGallery" class="gallery"></div>
+            <div id="natureGallery" class="gallery"></div>
+        
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <img id="lightboxImage" src="" alt="">
+            </div>
 
 <!-- Category Sections with Image Galleries 
 <div class="category">
