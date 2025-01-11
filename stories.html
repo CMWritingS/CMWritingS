@@ -69,66 +69,45 @@
     <!-- end header section -->
   </div>
 <!-- Stories Section -->
-<section class="stories_section">
-  <div class="container">
-    <h2>My Stories</h2>
+  <body>
+    <h1> My Stories</h1>
+    <div id="storyList">Loading stories...</div>
     <script src="js/stories.js"></script>
-    <div id="storyList">
-      <!-- Stories will be dynamically injected here -->
-      <style>
-        .story-item {
-          display: flex;
-          align-items: center; /* Aligns text vertically in the middle */
-          gap: 10px; /* Space between the title and the link */
-          margin-bottom: 10px; /* Space between each story */
-        }
-      
-        .story-item p {
-          margin: 0; /* Removes default margin from <p> */
-        }
-      
-        .story-item a {
-          text-decoration: none; /* Optional: Removes underline from the link */
-          color: #007bff; /* Optional: Makes the link blue */
-        }
-      
-        .story-item a:hover {
-          text-decoration: underline; /* Optional: Adds underline on hover */
-        }
-      </style>
-      
-      <div class="story-item">
-        <p>farmer</p>
-        <a href="https://github.com/CMWritingS/CMWritingS/blob/main/stories/farmer.pdf" target="_blank"><span>Read More</span></a>
-      </div>
-
-      <div class="story-item">
-        <p>good vs bad</p>
-        <a href="/stories/good%20vs%20bad.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div>  
-      <div class="story-item">
-        <p>ఆ నలుగురు</p>
-        <a href="/stories/ఆ%20నలుగురు.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div>
-      <div class="story-item">
-        <p>ఏడూ అడుగులు</p>
-        <a href="/stories/ఏడూ%20అడుగులు.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div>
-      <div class="story-item">
-        <p>కమలాకర్ - కమల </p>
-        <a href="/stories/కమలాకర్%20-%20కమల.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div>
-      <div class="story-item">
-        <p>కాఫీ షాప్</p>
-        <a href="/stories/కాఫీ%20షాప్.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div>
-      <div class="story-item">
-        <p>మిస్ - understand</p>
-        <a href="/stories/మిస్%20-%20understand.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
-      </div> 
-
+    <script src="js/story-styles.js"></script>
+    <div class="story-item">
+      <p>farmer</p>
+      <a href="stories/farmer.pdf" target="_blank"><span>Read More</span></a>
     </div>
-  </div>
+
+    <div class="story-item">
+      <p>good vs bad</p>
+      <a href="stories/good vs bad.pdf" target="_blank"><span>Read More</span></a>
+    </div>
+
+    <div class="story-item">
+      <p>ఆ నలుగురు</p>
+      <a href="/stories/aa naluguru.pdf" target="_blank"><span>Read More</span></a>
+    </div>
+    <div class="story-item">
+      <p>ఏడూ అడుగులు</p>
+      <a href="/stories/ఏడూ అడుగులు.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
+    </div>
+    <div class="story-item">
+      <p>కమలాకర్ - కమల </p>
+      <a href="/stories/కమలాకర్ - కమల.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
+    </div>
+    <div class="story-item">
+      <p>కాఫీ షాప్</p>
+      <a href="/stories/కాఫీ షాప్.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
+    </div>
+    <div class="story-item">
+      <p>మిస్ - understand</p>
+      <a href="/stories/మిస్ - understand.pdf" target="_blank" rel="noopener noreferrer"><span>Read More</span></a>
+    </div> 
+
+
+  </body>  
+
 </section>
 
 <!-- Footer -->
@@ -142,55 +121,6 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/custom.js"></script>
-
-<script>
-  // Function to fetch and display PDF files from the /stories directory
-  fetch('/stories')
-    .then(response => response.json())
-    .then(files => {
-      const storyListDiv = document.getElementById('storyList');
-      if (files.length > 0) {
-        files.forEach(file => {
-          // Create a link for each PDF file
-          const linkElement = document.createElement('a');
-          linkElement.href = '/stories/' + file;
-          linkElement.textContent = file;
-          linkElement.target = "_blank";  // Open in new tab
-          storyListDiv.appendChild(linkElement);
-          storyListDiv.appendChild(document.createElement('br'));  // Add a line break
-        });
-      } else {
-        storyListDiv.textContent = 'No stories available.';
-      }
-    })
-    .catch(err => {
-      console.error('Error fetching stories:', err);
-    });
-</script>
-<script>
-// Function to fetch and display PDF files from the /stories directory
-fetch('/stories')
-  .then(response => response.json())
-  .then(files => {
-    const storyListDiv = document.getElementById('storyList');
-    if (files.length > 0) {
-      files.forEach(file => {
-        // Create a link for each PDF file
-        const linkElement = document.createElement('a');
-        linkElement.href = '/stories/' + file;
-        linkElement.textContent = file;
-        linkElement.target = "_blank";  // Open in new tab
-        storyListDiv.appendChild(linkElement);
-        storyListDiv.appendChild(document.createElement('br'));  // Add a line break
-      });
-    } else {
-      storyListDiv.textContent = 'No stories available.';
-    }
-  })
-  .catch(err => {
-    console.error('Error fetching stories:', err);
-  });
-</script>
 
  
   <div class="footer_container">
