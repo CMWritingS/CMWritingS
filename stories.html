@@ -74,13 +74,57 @@
     <h2>My Stories</h2>
     <div id="storyList">
       <!-- Stories will be dynamically injected here -->
-      <embed src="/stories/farmer.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/good vs bad.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/ఆ నలుగురు.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/ఏడూ అడుగులు.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/కమలాకర్ - కమల.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/కాఫీ షాప్.pdf" type="application/pdf" width="100%" height="500px" />
-      <embed src="/stories/మిస్ - understand.pdf" type="application/pdf" width="100%" height="500px" />
+      <style>
+        .story-item {
+          display: flex;
+          align-items: center; /* Aligns text vertically in the middle */
+          gap: 10px; /* Space between the title and the link */
+          margin-bottom: 10px; /* Space between each story */
+        }
+      
+        .story-item p {
+          margin: 0; /* Removes default margin from <p> */
+        }
+      
+        .story-item a {
+          text-decoration: none; /* Optional: Removes underline from the link */
+          color: #007bff; /* Optional: Makes the link blue */
+        }
+      
+        .story-item a:hover {
+          text-decoration: underline; /* Optional: Adds underline on hover */
+        }
+      </style>
+      
+      <div class="story-item">
+        <p>farmer</p>
+        <a href="/stories/farmer.pdf" target="_blank"><span>Read More</span></a>
+      </div>
+
+      <div class="story-item">
+        <p>good vs bad</p>
+        <a href="/stories/good%20vs%20bad.pdf" target="_blank"><span>Read More</span></a>
+      </div>  
+      <div class="story-item">
+        <p>ఆ నలుగురు</p>
+        <a href="/stories/ఆ%20నలుగురు.pdf" target="_blank"><span>Read More</span></a>
+      </div>
+      <div class="story-item">
+        <p>ఏడూ అడుగులు</p>
+        <a href="/stories/ఏడూ%20అడుగులు.pdf" target="_blank"><span>Read More</span></a>
+      </div>
+      <div class="story-item">
+        <p>కమలాకర్ - కమల </p>
+        <a href="/stories/కమలాకర్%20-%20కమల.pdf" target="_blank"><span>Read More</span></a>
+      </div>
+      <div class="story-item">
+        <p>కాఫీ షాప్</p>
+        <a href="/stories/కాఫీ%20షాప్.pdf" target="_blank"><span>Read More</span></a>
+      </div>
+      <div class="story-item">
+        <p>మిస్ - understand</p>
+        <a href="/stories/మిస్%20-%20understand.pdf" target="_blank"><span>Read More</span></a>
+      </div> 
 
     </div>
   </div>
