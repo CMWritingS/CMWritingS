@@ -9,7 +9,7 @@ function fetchAndLoadImages(galleryId, category) {
     gallery.innerHTML = ''; // Clear previous content
 
     // Dynamically load images based on the naming convention
-    const totalImages = 20000; // Adjust based on the actual number of images available
+    const totalImages = 1000; // Adjust based on the actual number of images available
     for (let i = 1; i <= totalImages; i++) {
         const img = document.createElement('img');
         img.src = `images/quotes/${category}/${category}-image${i}.jpg`;
