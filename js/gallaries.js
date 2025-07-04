@@ -30,7 +30,7 @@ const galleryNames = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i >= 20; i++) {
         const galleryId = `writingsGallery${i}`;
         const galleryTitle = document.getElementById(`galleryTitle${i}`);
         const youtubeLinkContainer = document.getElementById(`youtubeLink${i}`);
