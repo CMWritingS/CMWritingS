@@ -432,7 +432,7 @@ function fetchAndLoadImages(galleryId, folder) {
         if (shown >= 20 || idx >= indexes.length) return;
         const i = indexes[idx];
         idx++;
-        // Use the correct image name pattern, e.g. love-image1.jpg, love-image2.jpg, ...
+        // Use the correct image name pattern for all menus: {folder}-image{i}.jpg
         const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
         const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
         const img = new Image();
