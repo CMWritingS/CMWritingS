@@ -24,6 +24,7 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/modern-colors.css" rel="stylesheet" />
 
     <style>
         .category {
@@ -66,6 +67,53 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .category-menu-wrapper {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 10px 0;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .category-menu-nav {
+            width: 100%;
+        }
+
+        .category-menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-menu-list li {
+            margin: 0;
+        }
+
+        .category-menu-list a {
+            display: block;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background: #4f8a8b;
+            color: #fff !important;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .category-menu-list a:hover {
+            background: #ff6f3c;
+            color: #fff !important;
+        }
     </style>
 
     <script>
@@ -85,7 +133,7 @@
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <a class="navbar-brand" href="index.html">
                         <span>
-                            CM-Writings 
+                            CM-Writings
                         </span>
                     </a>
 
@@ -109,7 +157,7 @@
                                 <a class="nav-link" href="contact.html">Contact Us</a>
                             </li>
                         </ul>
-                        
+
                     </div>
                 </nav>
             </div>
@@ -120,310 +168,353 @@
     <!-- quotes section -->
     <section class="quotes_section layout_padding">
         <div class="container">
-             <!--<h1>CM Writings (<a href="https://www.youtube.com/@CmWritings" target="_blank">https://www.youtube.com/@CmWritings</a>)</h1> -->
             <marquee style="color: red; font-size: 1.5em; font-weight: bold;">
                 <a href="https://www.youtube.com/@CmWritings" target="_blank" style="color: red; text-decoration: none;">
                     CM Writings (https://www.youtube.com/@CmWritings)
                 </a>
             </marquee>
-            <!-- Category Menu -->
-            <title>Horizontal Menu with Lightbox</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .category-menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background-color: #333;
-        }
-        .category-menu ul li {
-            margin: 0;
-        }
-        .category-menu ul li a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-        }
-        .category-menu ul li a:hover {
-            background-color: #575757;
-        }
-        .gallery {
-            display: none;
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            cursor: pointer;
-        }
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .lightbox:target {
-            display: flex;
-        }
-    </style>
-    <script src="js/menu.js" defer></script>
-</head>
-<body>
-    <div class="category-menu">
-        <ul>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('loveGallery'); fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('lifeGallery'); fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('happinessGallery'); fetchAndLoadImages('happinessGallery', 'happiness')">Devotional</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('natureGallery'); fetchAndLoadImages('natureGallery', 'nature')">Drinking</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('caronaGallery'); fetchAndLoadImages('caronaGallery', 'carona')">Carona</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('casteGallery'); fetchAndLoadImages('casteGallery', 'caste')">Caste</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('deathGallery'); fetchAndLoadImages('deathGallery', 'death')">Death</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('factSpecialGallery'); fetchAndLoadImages('factSpecialGallery', 'fact_special')">Fact Special</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('factsGallery'); fetchAndLoadImages('factsGallery', 'facts')">Facts</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('familyGallery'); fetchAndLoadImages('familyGallery', 'family')">FAMILY</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('fearGallery'); fetchAndLoadImages('fearGallery', 'fear')">Fear</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('festivalsGallery'); fetchAndLoadImages('festivalsGallery', 'festivals')">Festivals</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('hummanityGallery'); fetchAndLoadImages('hummanityGallery', 'hummanity')">Hummanity</a></li>
-        </ul>
-    </div>
-    <div class="category-menu">
-        <ul>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('inspirationGallery'); fetchAndLoadImages('inspirationGallery', 'inspiration')">INSPIRATION</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('lifeSplGallery'); fetchAndLoadImages('lifeSplGallery', 'life_spl')">Life Spl</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('listOfDaysGallery'); fetchAndLoadImages('listOfDaysGallery', 'list_of_days')">List of Days</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('lovePoetryGallery'); fetchAndLoadImages('lovePoetryGallery', 'love_poetry')">LOVE POETRY</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('loveSplGallery'); fetchAndLoadImages('loveSplGallery', 'love_spl')">Love Spl</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('mensGallery'); fetchAndLoadImages('mensGallery', 'mens')">MENS</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('moneyGallery'); fetchAndLoadImages('moneyGallery', 'money')">MONEY</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('moralsGallery'); fetchAndLoadImages('moralsGallery', 'morals')">MORALS</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('parentsGallery'); fetchAndLoadImages('parentsGallery', 'parents')">PARENTS</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('realitySplGallery'); fetchAndLoadImages('realitySplGallery', 'reality_spl')">Reality Spl</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('relationGallery'); fetchAndLoadImages('relationGallery', 'relation')">RELATION</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('selfishGallery'); fetchAndLoadImages('selfishGallery', 'selfish')">SELFISH</a></li>
-        </ul>
-    </div>
-    <div class="category-menu">
-        <ul>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('smileGallery'); fetchAndLoadImages('smileGallery', 'smile')">Smile</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('socialIssuesQuotesGallery'); fetchAndLoadImages('socialIssuesQuotesGallery', 'social_issues_quotes')">Social Issues Quotes</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('specialWritingsGallery'); fetchAndLoadImages('specialWritingsGallery', 'special_writings')">SPECIAL WRITINGS</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('tearsGallery'); fetchAndLoadImages('tearsGallery', 'tears')">Tears</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('womenAndChildGallery'); fetchAndLoadImages('womenAndChildGallery', 'women_and_child')">Women and Child</a></li>
-            <li><a href="javascript:void(0)" onclick="toggleGallery('writingsOfLovePoetryGallery'); fetchAndLoadImages('writingsOfLovePoetryGallery', 'writings_of_love_poetry')">Writings of Love Poetry</a></li>
-        </ul>
-    </div>
-    <div class="category">
-        <h2 >
-            Select the category to view the images here
-        </h2>
-        <div></div>
-    </div>
-    <div id="loveGallery" class="gallery"></div>
-    <div id="lifeGallery" class="gallery"></div>
-    <div id="happinessGallery" class="gallery"></div>
-    <div id="natureGallery" class="gallery"></div>
-    <div id="caronaGallery" class="gallery"></div>
-    <div id="casteGallery" class="gallery"></div>
-    <div id="deathGallery" class="gallery"></div>
-    <div id="factSpecialGallery" class="gallery"></div>
-    <div id="factsGallery" class="gallery"></div>
-    <div id="familyGallery" class="gallery"></div>
-    <div id="fearGallery" class="gallery"></div>
-    <div id="festivalsGallery" class="gallery"></div>
-    <div id="hummanityGallery" class="gallery"></div>
-    <div id="inspirationGallery" class="gallery"></div>
-    <div id="lifeSplGallery" class="gallery"></div>
-    <div id="listOfDaysGallery" class="gallery"></div>
-    <div id="lovePoetryGallery" class="gallery"></div>
-    <div id="loveSplGallery" class="gallery"></div>
-    <div id="mensGallery" class="gallery"></div>
-    <div id="moneyGallery" class="gallery"></div>
-    <div id="moralsGallery" class="gallery"></div>
-    <div id="parentsGallery" class="gallery"></div>
-    <div id="realitySplGallery" class="gallery"></div>
-    <div id="relationGallery" class="gallery"></div>
-    <div id="selfishGallery" class="gallery"></div>
-    <div id="smileGallery" class="gallery"></div>
-    <div id="socialIssuesQuotesGallery" class="gallery"></div>
-    <div id="specialWritingsGallery" class="gallery"></div>
-    <div id="tearsGallery" class="gallery"></div>
-    <div id="womenAndChildGallery" class="gallery"></div>
-    <div id="writingsOfLovePoetryGallery" class="gallery"></div>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightboxImage" src="" alt="">
-    </div>
-    
-    <div class="footer_container">
-        <!-- info section -->
-        <section class="info_section ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 ">
-                        <div class="info_detail">
-                            <h4>
-                                CM-Writings
-                            </h4>
-                            <p>
-                                Dedicated to making an impact, CM-Writings aims to connect hearts and minds through the power of words.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2 mx-auto">
-                        <div class="info_link_box">
-                            <h4>
-                                Links
-                            </h4>
-                            <div class="info_links">
-                                <a class="" href="index.html">
-                                    Home
-                                </a>
-                                <a class="" href="about.html">
-                                    About
-                                </a>
-                                <a class="" href="writings.html">
-                                    Writings
-                                </a>
-                                <a class="" href="contact.html">
-                                    Contact Us
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ">
-                        
-                        </form>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-0 ml-auto">
-                        <div class="info_contact">
-                            <h4>
-                                Address
-                            </h4>
-                            <div class="contact_link_box">
-                                <a href="">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span>
-                                        Vijayawada, Andhra Pradesh, India
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <span>
-                    Call +91 7893961499
-                  </span>
-                </a>
-                <a href="">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    cmwritings21@gmail.com
-                  </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="info_social">
-                            <a href="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </a>
-                        <a href="">
-                          <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                         </a>
-                         </a>
-                         <a href="">
-                         <i class="fa fa-youtube" aria-hidden="true"></i>
-                         </a>
-                            <a href="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Improved Category Menu -->
+            <div class="category-menu-wrapper" style="margin-bottom: 20px;">
+                <nav class="category-menu-nav">
+                    <ul class="category-menu-list">
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('happinessGallery', 'happiness')">Devotional</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('natureGallery', 'nature')">Drinking</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('caronaGallery', 'carona')">Carona</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('casteGallery', 'caste')">Caste</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('deathGallery', 'death')">Death</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factSpecialGallery', 'fact_special')">Fact Special</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factsGallery', 'facts')">Facts</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('familyGallery', 'family')">FAMILY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('fearGallery', 'fear')">Fear</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('festivalsGallery', 'festivals')">Festivals</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('hummanityGallery', 'hummanity')">Hummanity</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('inspirationGallery', 'inspiration')">INSPIRATION</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeSplGallery', 'life_spl')">Life Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('listOfDaysGallery', 'list_of_days')">List of Days</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lovePoetryGallery', 'love_poetry')">LOVE POETRY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveSplGallery', 'love_spl')">Love Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('mensGallery', 'mens')">MENS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moneyGallery', 'money')">MONEY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moralsGallery', 'morals')">MORALS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('parentsGallery', 'parents')">PARENTS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('realitySplGallery', 'reality_spl')">Reality Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('relationGallery', 'relation')">RELATION</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('selfishGallery', 'selfish')">SELFISH</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('smileGallery', 'smile')">Smile</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('socialIssuesQuotesGallery', 'social_issues_quotes')">Social Issues Quotes</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('specialWritingsGallery', 'special_writings')">SPECIAL WRITINGS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('tearsGallery', 'tears')">Tears</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('womenAndChildGallery', 'women_and_child')">Women and Child</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('writingsOfLovePoetryGallery', 'writings_of_love_poetry')">Writings of Love Poetry</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
-        <!-- end info section -->
+            <!-- End Improved Category Menu -->
+            <div class="category">
+                <h2>
+                    Select the category to view the images here
+                </h2>
+                <div></div>
+            </div>
+            <div id="loveGallery" class="gallery"></div>
+            <div id="lifeGallery" class="gallery"></div>
+            <div id="happinessGallery" class="gallery"></div>
+            <div id="natureGallery" class="gallery"></div>
+            <div id="caronaGallery" class="gallery"></div>
+            <div id="casteGallery" class="gallery"></div>
+            <div id="deathGallery" class="gallery"></div>
+            <div id="factSpecialGallery" class="gallery"></div>
+            <div id="factsGallery" class="gallery"></div>
+            <div id="familyGallery" class="gallery"></div>
+            <div id="fearGallery" class="gallery"></div>
+            <div id="festivalsGallery" class="gallery"></div>
+            <div id="hummanityGallery" class="gallery"></div>
+            <div id="inspirationGallery" class="gallery"></div>
+            <div id="lifeSplGallery" class="gallery"></div>
+            <div id="listOfDaysGallery" class="gallery"></div>
+            <div id="lovePoetryGallery" class="gallery"></div>
+            <div id="loveSplGallery" class="gallery"></div>
+            <div id="mensGallery" class="gallery"></div>
+            <div id="moneyGallery" class="gallery"></div>
+            <div id="moralsGallery" class="gallery"></div>
+            <div id="parentsGallery" class="gallery"></div>
+            <div id="realitySplGallery" class="gallery"></div>
+            <div id="relationGallery" class="gallery"></div>
+            <div id="selfishGallery" class="gallery"></div>
+            <div id="smileGallery" class="gallery"></div>
+            <div id="socialIssuesQuotesGallery" class="gallery"></div>
+            <div id="specialWritingsGallery" class="gallery"></div>
+            <div id="tearsGallery" class="gallery"></div>
+            <div id="womenAndChildGallery" class="gallery"></div>
+            <div id="writingsOfLovePoetryGallery" class="gallery"></div>
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <img id="lightboxImage" src="" alt="">
+            </div>
 
-       <!-- footer section -->
-    <footer class="footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="">CM-Writings</a>
-        </p>
-        <p>
-          Designed By Pruthvi raj
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
-    </div>
+            <div class="footer_container">
+                <!-- info section -->
+                <section class="info_section ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-3 ">
+                                <div class="info_detail">
+                                    <h4>
+                                        CM-Writings
+                                    </h4>
+                                    <p>
+                                        Dedicated to making an impact, CM-Writings aims to connect hearts and minds through the power of words.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-2 mx-auto">
+                                <div class="info_link_box">
+                                    <h4>
+                                        Links
+                                    </h4>
+                                    <div class="info_links">
+                                        <a class="" href="index.html">
+                                            Home
+                                        </a>
+                                        <a class="" href="about.html">
+                                            About
+                                        </a>
+                                        <a class="" href="writings.html">
+                                            Writings
+                                        </a>
+                                        <a class="" href="contact.html">
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 ">
 
-    <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- popper js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End Google Map -->
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+                                <div class="info_contact">
+                                    <h4>
+                                        Address
+                                    </h4>
+                                    <div class="contact_link_box">
+                                        <a href="">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <span>
+                                                Vijayawada, Andhra Pradesh, India
+                                            </span>
+                                        </a>
+                                        <a href="">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <span>
+                            Call +91 7893961499
+                          </span>
+                                        </a>
+                                        <a href="">
+                                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                                          <span>
+                                            cmwritings21@gmail.com
+                                          </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info_social">
+                                    <a href="">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                </a>
+                                <a href="">
+                                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                 </a>
+                                 </a>
+                                 <a href="">
+                                 <i class="fa fa-youtube" aria-hidden="true"></i>
+                                 </a>
+                                    <a href="">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end info section -->
 
-</body>
+                <!-- footer section -->
+                <footer class="footer_section">
+                    <div class="container">
+                        <p>
+                            &copy; <span id="displayYear"></span> All Rights Reserved By
+                            <a href="">CM-Writings</a>
+                        </p>
+                        <p>
+                            Designed By Pruthvi raj
+                        </p>
+                    </div>
+                </footer>
+                <!-- footer section -->
+            </div>
 
-</html>
-<script>
-    document.querySelectorAll('.quote img').forEach(img => {
-        img.addEventListener('click', function() {
-            const imgSrc = this.src;
-            const modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-            modal.style.display = 'flex';
-            modal.style.justifyContent = 'center';
-            modal.style.alignItems = 'center';
-            modal.style.zIndex = '1000';
-            modal.innerHTML = `<img src="${imgSrc}" style="max-width: 90%; max-height: 90%;">`;
-            modal.addEventListener('click', function() {
-                document.body.removeChild(modal);
+            <!-- jQery -->
+            <script src="js/jquery-3.4.1.min.js"></script>
+            <!-- popper js -->
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+            </script>
+            <!-- bootstrap js -->
+            <script src="js/bootstrap.js"></script>
+            <script src="js/custom.js"></script>
+            <!-- Google Map -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+            <!-- End Google Map -->
+
+        </body>
+
+    </html>
+    <script>
+        document.querySelectorAll('.quote img').forEach(img => {
+            img.addEventListener('click', function () {
+                const imgSrc = this.src;
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '1000';
+                modal.innerHTML = `<img src="${imgSrc}" style="max-width: 90%; max-height: 90%;">`;
+                modal.addEventListener('click', function () {
+                    document.body.removeChild(modal);
+                });
+                document.body.appendChild(modal);
             });
-            document.body.appendChild(modal);
         });
-    });
-</script>
-<script>
+    </script>
+    <script>
+        document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/911234567890?text=Hello%20CM-Writings";
+    </script>
+    <script>
+        document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
+        document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
+        document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
+        document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
+        document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
+    </script>
+    <script>
+function fetchAndLoadImages(galleryId, folder) {
+    document.querySelectorAll('.gallery').forEach(g => g.style.display = 'none');
+    const gallery = document.getElementById(galleryId);
+    if (!gallery) return;
+    gallery.innerHTML = '';
+    gallery.style.display = 'flex';
+
+    // Try to load up to 100 images, but only display 20 random ones that exist
+    let maxImages = 100;
+    let indexes = Array.from({length: maxImages}, (_, i) => i + 1);
+    // Shuffle the indexes array
+    for (let j = indexes.length - 1; j > 0; j--) {
+        const k = Math.floor(Math.random() * (j + 1));
+        [indexes[j], indexes[k]] = [indexes[k], indexes[j]];
+    }
+    let shown = 0;
+    let idx = 0;
+    function tryNext() {
+        if (shown >= 20 || idx >= indexes.length) return;
+        const i = indexes[idx];
+        idx++;
+        // Use the correct image name pattern, e.g. love-image1.jpg, love-image2.jpg, ...
+        const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
+        const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
+        const img = new Image();
+        img.src = thumbSrc;
+        img.alt = `Quote ${i}`;
+        img.style.cursor = "pointer";
+        img.onclick = () => openLightbox(imgSrc);
+        img.onload = function() {
+            const imgDiv = document.createElement('div');
+            imgDiv.className = 'quote';
+            imgDiv.appendChild(img);
+            gallery.appendChild(imgDiv);
+            shown++;
+            tryNext();
+        };
+        img.onerror = function() {
+            if (thumbSrc !== imgSrc) {
+                img.src = imgSrc;
+                img.onerror = function() {
+                    tryNext();
+                };
+                img.onload = function() {
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'quote';
+                    imgDiv.appendChild(img);
+                    gallery.appendChild(imgDiv);
+                    shown++;
+                    tryNext();
+                };
+            } else {
+                tryNext();
+            }
+        };
+    }
+    tryNext();
+}
+function openLightbox(src) {
+    let lightbox = document.getElementById('lightbox');
+    let lightboxImage = document.getElementById('lightboxImage');
+    if (lightbox && lightboxImage) {
+        lightboxImage.src = src;
+        lightbox.style.display = 'flex';
+    }
+}
+function closeLightbox() {
+    let lightbox = document.getElementById('lightbox');
+    if (lightbox) lightbox.style.display = 'none';
+}
+    </script>
+    <script>
+        document.querySelectorAll('.quote img').forEach(img => {
+            img.addEventListener('click', function () {
+                const imgSrc = this.src;
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '1000';
+                modal.innerHTML = `<img src="${imgSrc}" style="max-width: 90%; max-height: 90%;">`;
+                modal.addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+                document.body.appendChild(modal);
+            });
+        });
+    </script>
+    <script>
     document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/911234567890?text=Hello%20CM-Writings";
   </script>
   <script>
     document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
     document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
+    document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
+    document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
+    document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
+  </script></script>
     document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
     document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
     document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";

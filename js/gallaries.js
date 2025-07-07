@@ -30,7 +30,19 @@ const galleryNames = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    for (let i = 1; i >= 20; i++) {
+    const MAX_IMAGES_PER_FOLDER = 1000; // Adjust as needed
+    const IMAGES_TO_SHOW = 20;
+
+    function getRandomUniqueNumbers(max, count) {
+        const arr = Array.from({length: max}, (_, i) => i + 1);
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr.slice(0, count);
+    }
+
+    for (let i = 1; i <= 20; i++) {
         const galleryId = `writingsGallery${i}`;
         const galleryTitle = document.getElementById(`galleryTitle${i}`);
         const youtubeLinkContainer = document.getElementById(`youtubeLink${i}`);
@@ -52,22 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 descriptionContainer.innerText = galleryNames[galleryId].description;
             }
 
-            // Add images dynamically
+            // Add 20 random images dynamically
             const galleryContainer = document.getElementById(`writingsGallery${i}`);
             const row = galleryContainer.querySelector('.row');
-            for (let j = 1; j <= 4; j++) { // Assuming 4 images per gallery
-                const fullImage = `assets/images/gallery/${folder}/writings${(i - 1) * 4 + j}.jpg`;
-                const thumbImage = `assets/images/gallery/thumb/writings${(i - 1) * 4 + j}.jpg`;
-                
+            row.innerHTML = ""; // Clear previous images
+
+            const randomIndexes = getRandomUniqueNumbers(MAX_IMAGES_PER_FOLDER, IMAGES_TO_SHOW);
+            randomIndexes.forEach(idx => {
+                const fullImage = `assets/images/gallery/${folder}/writings${idx}.jpg`;
+                const thumbImage = `assets/images/gallery/thumb/writings${idx}.jpg`;
                 row.innerHTML += `
                     <a href="${fullImage}" class="col-md-3 col-sm-4 gallery-item lightbox">
                         <img src="${thumbImage}" alt="">
                         <span class="on-hover">
-                            <span class="hover-caption">Image Caption ${(i - 1) * 4 + j}</span>
+                            <span class="hover-caption">Image Caption ${idx}</span>
                         </span>
                     </a>
                 `;
-            }
+            });
         }
     }
 });

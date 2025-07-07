@@ -1,0 +1,68 @@
+/* Modern color palette */
+body {
+  background-color: #F6F6F6;
+  color: #222831;
+}
+
+.header_section,
+.footer_section,
+.slider_section,
+.about_section,
+.case_section,
+.info_section,
+.client_section,
+.quotes_section,
+.contact_section,
+.writings_section {
+  background-color: #4F8A8B !important;
+  color: #F9ED69 !important;
+}
+
+/* Remove any purple overrides */
+.bg-purple,
+.purple,
+.text-purple {
+  background-color: #4F8A8B !important;
+  color: #F9ED69 !important;
+}
+
+/* For containers inside sections, keep them light for contrast */
+.container,
+.container-fluid {
+  background-color: #F6F6F6 !important;
+  color: #222831 !important;
+  max-width: 900px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Headings and links */
+.heading_container h2,
+.info_section h4,
+.navbar-brand span,
+a,
+.btn {
+  color: #222831 !important;
+}
+
+a:hover,
+.btn:hover {
+  color: #FF6F3C !important;
+}
+}
+
+/* Example: If you want a blue accent instead, use this:
+.bg-purple,
+.purple,
+.text-purple {
+  background-color: #5A9BD5 !important;
+  color: #fff !important;
+}
+*/

@@ -895,3 +895,23 @@ a:focus {
 .category-menu ul li a:hover {
   background-color: #575757;
 }
+
+/* Remove any purple backgrounds or custom shape dividers */
+.custom-shape-divider,
+.purple,
+.bg-purple,
+.text-purple {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove any inline purple background */
+section[style*="background-color: purple"],
+div[style*="background-color: purple"],
+section[style*="background:#800080"],
+div[style*="background:#800080"] {
+  background: none !important;
+  background-color: transparent !important;
+}
