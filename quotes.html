@@ -418,8 +418,8 @@ function fetchAndLoadImages(galleryId, folder) {
     gallery.innerHTML = '';
     gallery.style.display = 'flex';
 
-    // Try to load up to 100 images, but only display 20 random ones that exist
-    let maxImages = 100;
+    // Try to load up to 1000 images, but only display 20 random ones that exist
+    let maxImages = 1000;
     let indexes = Array.from({length: maxImages}, (_, i) => i + 1);
     // Shuffle the indexes array
     for (let j = indexes.length - 1; j > 0; j--) {
@@ -432,14 +432,13 @@ function fetchAndLoadImages(galleryId, folder) {
         if (shown >= 20 || idx >= indexes.length) return;
         const i = indexes[idx];
         idx++;
-        // Use the correct image name pattern for all menus: {folder}-image{i}.jpg
         const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
         const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
         const img = new Image();
         img.src = thumbSrc;
         img.alt = `Quote ${i}`;
         img.style.cursor = "pointer";
-        img.onclick = () => openLightbox(imgSrc);
+        img.onclick = function() { openLightbox(imgSrc); };
         img.onload = function() {
             const imgDiv = document.createElement('div');
             imgDiv.className = 'quote';
@@ -469,12 +468,23 @@ function fetchAndLoadImages(galleryId, folder) {
     }
     tryNext();
 }
+
 function openLightbox(src) {
     let lightbox = document.getElementById('lightbox');
     let lightboxImage = document.getElementById('lightboxImage');
     if (lightbox && lightboxImage) {
         lightboxImage.src = src;
         lightbox.style.display = 'flex';
+        lightboxImage.style.maxWidth = '90vw';
+        lightboxImage.style.maxHeight = '90vh';
+        lightboxImage.style.width = 'auto';
+        lightboxImage.style.height = 'auto';
+        lightboxImage.style.boxShadow = '0 0 32px rgba(0,0,0,0.7)';
+        lightboxImage.style.background = '#fff';
+        lightbox.style.background = 'rgba(0,0,0,0.95)';
+        lightbox.style.alignItems = 'center';
+        lightbox.style.justifyContent = 'center';
+        lightbox.style.cursor = 'zoom-out';
     }
 }
 function closeLightbox() {
