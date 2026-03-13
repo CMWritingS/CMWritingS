@@ -22,28 +22,85 @@
         .page-banner { padding: 60px 0 50px; text-align: center; color: #fff; }
         .quotes-section { padding: 60px 0; }
         
-        /* Search Bar Design from Writings */
-        .search-container { max-width: 600px; margin: 0 auto 50px; }
-        .search-box { display: flex; background: #fff; padding: 10px; border-radius: 50px; box-shadow: var(--shadow); }
-        .search-box input { flex: 1; border: none; padding: 10px 20px; outline: none; border-radius: 50px; }
-        .search-box button { background: var(--grad1); color: #fff; border: none; padding: 10px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; }
-
-        /* Writing Card Design applied to Quotes */
-        .category-card { margin-bottom: 30px; }
-        .quote-card-mod { background: #fff; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; height: 100%; }
-        .quote-card-mod:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.14); }
-        .card-img { height: 200px; overflow: hidden; background: #eee; }
-        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-        .quote-card-mod:hover .card-img img { transform: scale(1.08); }
-        .card-body { padding: 24px 22px; text-align: center; }
-        .card-body h5 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; text-transform: capitalize; }
+        /* Category Menu */
+        .category-menu-wrapper {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
         
-        .btn-view { display: inline-flex; align-items: center; gap: 8px; padding: 10px 25px; background: var(--grad1); color: #fff; border: none; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; }
-        .btn-view:hover { color: #fff; opacity: 0.9; text-decoration: none; }
+        .category-menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .category-menu-list a {
+            display: block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: var(--bg-light);
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .category-menu-list a:hover {
+            background: var(--grad1);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .category-menu-list a.active {
+            background: var(--grad1);
+            color: white;
+        }
 
         .gallery { display: none; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid #ddd; }
-        .quote { width: 220px; height: 220px; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); position: relative; }
+        .quote { width: 220px; height: 220px; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); position: relative; cursor: pointer; transition: transform 0.3s; }
+        .quote:hover { transform: scale(1.05); }
         .quote img { width: 100%; height: 100%; object-fit: cover; }
+
+        .footer_container { background: var(--primary); padding-top: 70px; }
+        .footer-top { padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-brand h4 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; margin-bottom: 20px; }
+        .social-icons { display: flex; gap: 10px; }
+        .social-icons a { width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; transition: all 0.3s; text-decoration: none; }
+        .social-icons a:hover { background: var(--accent); transform: translateY(-3px); }
+        .footer-links h5 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 18px; }
+        .footer-links a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.75); text-decoration: none; margin-bottom: 12px; font-size: 0.93rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--secondary); }
+        .footer-contact h5 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 18px; }
+        .footer-contact a { display: flex; align-items: flex-start; gap: 12px; color: rgba(255,255,255,0.75); text-decoration: none; margin-bottom: 14px; font-size: 0.93rem; transition: color 0.3s; }
+        .footer-contact a:hover { color: var(--secondary); }
+        .footer-contact a i { color: var(--secondary); margin-top: 3px; flex-shrink: 0; }
+        .footer-newsletter h5 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+        .footer-newsletter p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 16px; }
+        .footer-newsletter input { width: 100%; padding: 10px 15px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.07); color: #fff; outline: none; font-size: 0.9rem; margin-bottom: 10px; }
+        .footer-newsletter input::placeholder { color: rgba(255,255,255,0.5); }
+        .footer-newsletter button { width: 100%; padding: 10px; background: var(--secondary); color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+        .footer-newsletter button:hover { background: var(--accent); }
+        .footer-bottom { text-align: center; padding: 25px 0; }
+        .footer-bottom p { color: rgba(255,255,255,0.7); margin: 5px 0; font-size: 0.9rem; }
+        .footer-bottom a { color: var(--secondary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .category-menu-list { gap: 10px; }
+            .category-menu-list a { padding: 8px 16px; font-size: 0.9em; }
+            .quote { width: 180px; height: 180px; }
+        }
     </style>
 </head>
 <body>
@@ -52,88 +109,69 @@
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
                     <a class="navbar-brand" href="index.html"><span>CM-Writings</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <span></span><span></span><span></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="writings.html">Writings</a></li>
                             <li class="nav-item active"><a class="nav-link" href="quotes.html">Quotes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </header>
         <div class="page-banner">
-            <h1>Quotes Categories</h1>
-            <p>Explore inspiring words across various categories</p>
+            <h1>Inspiring Quotes</h1>
+            <p>Discover wisdom through words that touch the heart</p>
         </div>
     </div>
 
     <section class="quotes-section">
         <div class="container">
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search categories..." onkeyup="searchCategories()">
-                    <button><i class="fa fa-search"></i> Search</button>
-                </div>
+            <!-- Category Menu -->
+            <div class="category-menu-wrapper">
+                <nav class="category-menu-nav">
+                    <ul class="category-menu-list">
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('happinessGallery', 'devotional')">Devotional</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('natureGallery', 'driking')">Drinking</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('caronaGallery', 'carona')">Carona</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('casteGallery', 'caste')">Caste</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('deathGallery', 'death')">Death</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factSpecialGallery', 'fact special')">Fact Special</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factsGallery', 'facts')">Facts</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('familyGallery', 'FAMILY')">FAMILY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('fearGallery', 'fear')">Fear</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('festivalsGallery', 'festivals')">Festivals</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('hummanityGallery', 'hummanity')">Hummanity</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('inspirationGallery', 'INSPIRATION')">INSPIRATION</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeSplGallery', 'life spl')">Life Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('listOfDaysGallery', 'list of days')">List of Days</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lovePoetryGallery', 'LOVE POETRY')">LOVE POETRY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveSplGallery', 'love spl')">Love Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('mensGallery', 'MENS')">MENS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moneyGallery', 'MONEY')">MONEY</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moralsGallery', 'MORALS')">MORALS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('parentsGallery', 'PARENTS')">PARENTS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('realitySplGallery', 'reality spl')">Reality Spl</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('relationGallery', 'RELATION')">RELATION</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('selfishGallery', 'SELFISH')">SELFISH</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('smileGallery', 'smile')">Smile</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('socialIssuesQuotesGallery', 'social issues quotes')">Social Issues Quotes</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('specialWritingsGallery', 'SPECIAL WRITINGS')">SPECIAL WRITINGS</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('tearsGallery', 'tears')">Tears</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('womenAndChildGallery', 'women and child')">Women and Child</a></li>
+                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('writingsOfLovePoetryGallery', 'writings of  love poetry')">Writings of Love Poetry</a></li>
+                    </ul>
+                </nav>
             </div>
 
-            <div class="row" id="categoryGrid">
-                <script>
-                    const categories = [
-                        { name: "Love", folder: "love", id: "loveGallery" },
-                        { name: "Life", folder: "life", id: "lifeGallery" },
-                        { name: "Devotional", folder: "devotional", id: "happinessGallery" },
-                        { name: "Drinking", folder: "driking", id: "natureGallery" },
-                        { name: "Carona", folder: "carona", id: "caronaGallery" },
-                        { name: "Caste", folder: "caste", id: "casteGallery" },
-                        { name: "Death", folder: "death", id: "deathGallery" },
-                        { name: "Fact Special", folder: "fact special", id: "factSpecialGallery" },
-                        { name: "Facts", folder: "facts", id: "factsGallery" },
-                        { name: "FAMILY", folder: "FAMILY", id: "familyGallery" },
-                        { name: "Fear", folder: "fear", id: "fearGallery" },
-                        { name: "Festivals", folder: "festivals", id: "festivalsGallery" },
-                        { name: "Hummanity", folder: "hummanity", id: "hummanityGallery" },
-                        { name: "INSPIRATION", folder: "INSPIRATION", id: "inspirationGallery" },
-                        { name: "Life Spl", folder: "life spl", id: "lifeSplGallery" },
-                        { name: "List of Days", folder: "list of days", id: "listOfDaysGallery" },
-                        { name: "LOVE POETRY", folder: "LOVE POETRY", id: "lovePoetryGallery" },
-                        { name: "Love Spl", folder: "love spl", id: "loveSplGallery" },
-                        { name: "MENS", folder: "MENS", id: "mensGallery" },
-                        { name: "MONEY", folder: "MONEY", id: "moneyGallery" },
-                        { name: "MORALS", folder: "MORALS", id: "moralsGallery" },
-                        { name: "PARENTS", folder: "PARENTS", id: "parentsGallery" },
-                        { name: "Reality Spl", folder: "reality spl", id: "realitySplGallery" },
-                        { name: "RELATION", folder: "RELATION", id: "relationGallery" },
-                        { name: "SELFISH", folder: "SELFISH", id: "selfishGallery" },
-                        { name: "Smile", folder: "smile", id: "smileGallery" },
-                        { name: "Social Issues Quotes", folder: "social issues quotes", id: "socialIssuesQuotesGallery" },
-                        { name: "SPECIAL WRITINGS", folder: "SPECIAL WRITINGS", id: "specialWritingsGallery" },
-                        { name: "Tears", folder: "tears", id: "tearsGallery" },
-                        { name: "Women and Child", folder: "women and child", id: "womenAndChildGallery" },
-                        { name: "Writings of Love Poetry", folder: "writings of  love poetry", id: "writingsOfLovePoetryGallery" }
-                    ];
-
-                    const grid = document.getElementById('categoryGrid');
-                    categories.forEach(cat => {
-                        grid.innerHTML += `
-                            <div class="col-md-4 col-sm-6 category-card" data-name="${cat.name.toLowerCase()}">
-                                <div class="quote-card-mod">
-                                    <div class="card-img">
-                                        <img src="images/quotes/${cat.folder}/${cat.folder}-image1.jpg" onerror="this.src='images/default-quote.jpg'" alt="${cat.name}">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5>${cat.name}</h5>
-                                        <a href="javascript:void(0)" class="btn-view" onclick="fetchAndLoadImages('${cat.id}', '${cat.folder}')">
-                                            <i class="fa fa-eye"></i> View Quotes
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    });
-                </script>
-            </div>
-
+            <!-- Gallery Containers -->
             <div id="loveGallery" class="gallery"></div>
             <div id="lifeGallery" class="gallery"></div>
             <div id="happinessGallery" class="gallery"></div>
@@ -168,98 +206,164 @@
         </div>
     </section>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script>
-        // Existing fetchAndLoadImages and search logic would go here or in custom.js
-        function searchCategories() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.category-card');
-            cards.forEach(card => {
-                const name = card.getAttribute('data-name');
-                card.style.display = name.includes(input) ? 'block' : 'none';
-            });
-        }
-        
-        // Ensure you have your original fetchAndLoadImages function here or linked via .js file
-    </script>
     <!-- FOOTER -->
-  <div class="footer_container">
-    <div class="container footer-top">
-      <div class="row">
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="footer-brand">
-            <h4>CM-Writings</h4>
-            <p>Dedicated to making an impact, connecting hearts and minds through the power of words.</p>
-            <div class="social-icons">
-              <a href="#" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-instagram"></a>
-              <a href="#" class="fa fa-youtube"></a>
+    <div class="footer_container">
+        <div class="container footer-top">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="footer-brand">
+                        <h4>CM-Writings</h4>
+                        <p>Dedicated to making an impact, connecting hearts and minds through the power of words.</p>
+                        <div class="social-icons">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-instagram"></a>
+                            <a href="#" class="fa fa-youtube"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <a href="index.html"><i class="fa fa-chevron-right"></i> Home</a>
+                        <a href="about.html"><i class="fa fa-chevron-right"></i> About</a>
+                        <a href="writings.html"><i class="fa fa-chevron-right"></i> Writings</a>
+                        <a href="quotes.html"><i class="fa fa-chevron-right"></i> Quotes</a>
+                        <a href="contact.html"><i class="fa fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="footer-contact">
+                        <h5>Get in Touch</h5>
+                        <a href="#"><i class="fa fa-map-marker"></i><span>Vijayawada, Andhra Pradesh, India</span></a>
+                        <a href="tel:+917893961499"><i class="fa fa-phone"></i><span>+91 7893961499</span></a>
+                        <a href="mailto:cmwritings21@gmail.com"><i class="fa fa-envelope"></i><span>cmwritings21@gmail.com</span></a>
+                        <a href="https://wa.me/917893961499?text=Hello%20CM-Writings"><i class="fa fa-whatsapp"></i><span>WhatsApp Us</span></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="footer-newsletter">
+                        <h5>Stay Updated</h5>
+                        <p>Subscribe for the latest stories and quotes.</p>
+                        <input type="email" id="footer-email" placeholder="Your email address">
+                        <button id="footer-sub-btn">Subscribe Now</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-6 col-lg-2 mb-4">
-          <div class="footer-links">
-            <h5>Quick Links</h5>
-            <a href="index.html"><i class="fa fa-chevron-right"></i> Home</a>
-            <a href="about.html"><i class="fa fa-chevron-right"></i> About</a>
-            <a href="writings.html"><i class="fa fa-chevron-right"></i> Writings</a>
-            <a href="quotes.html"><i class="fa fa-chevron-right"></i> Quotes</a>
-            <a href="contact.html"><i class="fa fa-chevron-right"></i> Contact</a>
-          </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="displayYear"></span> All Rights Reserved By <a href="index.html">CM-Writings</a></p>
+                <p>Designed with <i class="fa fa-heart" style="color:#e74c3c;"></i> by Pruthvi raj</p>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="footer-contact">
-            <h5>Get in Touch</h5>
-            <a href="#"><i class="fa fa-map-marker"></i><span>Vijayawada, Andhra Pradesh, India</span></a>
-            <a href="tel:+917893961499"><i class="fa fa-phone"></i><span>+91 7893961499</span></a>
-            <a href="mailto:cmwritings21@gmail.com"><i class="fa fa-envelope"></i><span>cmwritings21@gmail.com</span></a>
-            <a href="https://wa.me/917893961499?text=Hello%20CM-Writings"><i class="fa fa-whatsapp"></i><span>WhatsApp Us</span></a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="footer-newsletter">
-            <h5>Stay Updated</h5>
-            <p>Subscribe for the latest stories and quotes.</p>
-            <input type="email" id="footer-email" placeholder="Your email address">
-            <button id="footer-sub-btn">Subscribe Now</button>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; <span id="displayYear"></span> All Rights Reserved By <a href="index.html">CM-Writings</a></p>
-        <p>Designed with <i class="fa fa-heart" style="color:#e74c3c;"></i> by Pruthvi raj</p>
-      </div>
-    </div>
-  </div>
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="js/audio.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('displayYear').textContent = new Date().getFullYear();
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/audio.js"></script>
+    <script>
+        // Fetch and load images for each category
+        function fetchAndLoadImages(galleryId, folder) {
+            document.querySelectorAll('.gallery').forEach(g => g.style.display = 'none');
+            const gallery = document.getElementById(galleryId);
+            if (!gallery) return;
+            gallery.innerHTML = '';
+            gallery.style.display = 'flex';
 
-      document.getElementById('footer-sub-btn').addEventListener('click', function() {
-        const email = document.getElementById('footer-email').value;
-        if (!email) return;
-        let subs = JSON.parse(localStorage.getItem('subs') || '[]');
-        if (!subs.includes(email)) { subs.push(email); localStorage.setItem('subs', JSON.stringify(subs)); }
-        document.getElementById('footer-email').value = '';
-      });
+            let maxImages = 1000;
+            let indexes = Array.from({length: maxImages}, (_, i) => i + 1);
+            for (let j = indexes.length - 1; j > 0; j--) {
+                const k = Math.floor(Math.random() * (j + 1));
+                [indexes[j], indexes[k]] = [indexes[k], indexes[j]];
+            }
+            let shown = 0;
+            let idx = 0;
+            function tryNext() {
+                if (shown >= 20 || idx >= indexes.length) return;
+                const i = indexes[idx];
+                idx++;
+                const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
+                const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
+                const img = new Image();
+                img.src = thumbSrc;
+                img.alt = `Quote ${i}`;
+                img.style.cursor = "pointer";
+                img.onclick = function() { openLightbox(imgSrc); };
+                img.onload = function() {
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'quote';
+                    imgDiv.appendChild(img);
+                    gallery.appendChild(imgDiv);
+                    shown++;
+                    tryNext();
+                };
+                img.onerror = function() {
+                    if (thumbSrc !== imgSrc) {
+                        img.src = imgSrc;
+                        img.onerror = function() { tryNext(); };
+                        img.onload = function() {
+                            const imgDiv = document.createElement('div');
+                            imgDiv.className = 'quote';
+                            imgDiv.appendChild(img);
+                            gallery.appendChild(imgDiv);
+                            shown++;
+                            tryNext();
+                        };
+                    } else {
+                        tryNext();
+                    }
+                };
+            }
+            tryNext();
+        }
 
-      document.querySelectorAll('.fa-facebook').forEach(el => el.href = "https://www.facebook.com/CM-Writings");
-      document.querySelectorAll('.fa-twitter').forEach(el => el.href = "https://twitter.com/CM-Writings");
-      document.querySelectorAll('.fa-instagram').forEach(el => el.href = "https://www.instagram.com/CM-Writings");
-      document.querySelectorAll('.fa-youtube').forEach(el => el.href = "https://www.youtube.com/@CmWritings");
-    });
-  </script>
-</body>
-</html>
+        function openLightbox(src) {
+            const lightbox = document.createElement('div');
+            lightbox.style.position = 'fixed';
+            lightbox.style.top = '0';
+            lightbox.style.left = '0';
+            lightbox.style.width = '100%';
+            lightbox.style.height = '100%';
+            lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            lightbox.style.display = 'flex';
+            lightbox.style.justifyContent = 'center';
+            lightbox.style.alignItems = 'center';
+            lightbox.style.zIndex = '10000';
+            lightbox.style.cursor = 'zoom-out';
+            
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.maxWidth = '90vw';
+            img.style.maxHeight = '90vh';
+            img.style.borderRadius = '15px';
+            img.style.boxShadow = '0 20px 60px rgba(0,0,0,0.5)';
+            
+            lightbox.appendChild(img);
+            lightbox.onclick = function() {
+                document.body.removeChild(lightbox);
+            };
+            document.body.appendChild(lightbox);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('displayYear').textContent = new Date().getFullYear();
+
+            document.getElementById('footer-sub-btn').addEventListener('click', function() {
+                const email = document.getElementById('footer-email').value;
+                if (!email) return;
+                let subs = JSON.parse(localStorage.getItem('subs') || '[]');
+                if (!subs.includes(email)) { subs.push(email); localStorage.setItem('subs', JSON.stringify(subs)); }
+                document.getElementById('footer-email').value = '';
+            });
+
+            document.querySelectorAll('.fa-facebook').forEach(el => el.href = "https://www.facebook.com/CM-Writings");
+            document.querySelectorAll('.fa-twitter').forEach(el => el.href = "https://twitter.com/CM-Writings");
+            document.querySelectorAll('.fa-instagram').forEach(el => el.href = "https://www.instagram.com/CM-Writings");
+            document.querySelectorAll('.fa-youtube').forEach(el => el.href = "https://www.youtube.com/@CmWritings");
+        });
+    </script>
 </body>
 </html>
