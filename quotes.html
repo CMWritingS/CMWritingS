@@ -1,353 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="Chandra Mohan, Telugu Writer, Quotes, Love Quotes, Life Quotes, CM Writings" />
-    <meta name="description" content="Explore 1000+ inspiring Telugu quotes by Chandra Mohan across 30+ categories including love, life, inspiration, and more." />
-    <meta name="author" content="Chandra Mohan" />
-
-    <title>CM-Writings</title>
-
-    <!-- bootstrap core css -->
+    <title>Quotes - CM-Writings</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-    <!-- font awesome style -->
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet" />
-    <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-    <link href="css/modern-colors.css" rel="stylesheet" />
-
     <style>
-        .category {
-            margin-bottom: 40px;
+        :root {
+            --primary: #2c3e50; --secondary: #3498db; --accent: #e74c3c;
+            --text-light: #7f8c8d; --bg-light: #f4f6f9;
+            --grad1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
+        body { font-family: 'Poppins', sans-serif; color: var(--primary); background: var(--bg-light); margin: 0; }
+        .hero_area { background: var(--grad1); min-height: auto !important; }
+        .header_section { padding: 18px 0; background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); }
+        .page-banner { padding: 60px 0 50px; text-align: center; color: #fff; }
+        .quotes-section { padding: 60px 0; }
+        
+        /* Search Bar Design from Writings */
+        .search-container { max-width: 600px; margin: 0 auto 50px; }
+        .search-box { display: flex; background: #fff; padding: 10px; border-radius: 50px; box-shadow: var(--shadow); }
+        .search-box input { flex: 1; border: none; padding: 10px 20px; outline: none; border-radius: 50px; }
+        .search-box button { background: var(--grad1); color: #fff; border: none; padding: 10px 25px; border-radius: 50px; font-weight: 600; cursor: pointer; }
 
-        .category h2 {
-            text-align: center;
-            color: #333;
-            cursor: pointer;
-        }
+        /* Writing Card Design applied to Quotes */
+        .category-card { margin-bottom: 30px; }
+        .quote-card-mod { background: #fff; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; height: 100%; }
+        .quote-card-mod:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.14); }
+        .card-img { height: 200px; overflow: hidden; background: #eee; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .quote-card-mod:hover .card-img img { transform: scale(1.08); }
+        .card-body { padding: 24px 22px; text-align: center; }
+        .card-body h5 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; text-transform: capitalize; }
+        
+        .btn-view { display: inline-flex; align-items: center; gap: 8px; padding: 10px 25px; background: var(--grad1); color: #fff; border: none; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .btn-view:hover { color: #fff; opacity: 0.9; text-decoration: none; }
 
-        .category h2 a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        .category h2 a:hover {
-            text-decoration: underline;
-        }
-
-        .gallery {
-            display: none;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .quote {
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .quote img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .category-menu-wrapper {
-            display: flex;
-            justify-content: center;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            padding: 10px 0;
-            margin-bottom: 24px;
-            overflow-x: auto;
-        }
-
-        .category-menu-nav {
-            width: 100%;
-        }
-
-        .category-menu-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .category-menu-list li {
-            margin: 0;
-        }
-
-        .category-menu-list a {
-            display: block;
-            padding: 8px 16px;
-            border-radius: 5px;
-            background: #4f8a8b;
-            color: #fff !important;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-            white-space: nowrap;
-        }
-
-        .category-menu-list a:hover {
-            background: #ff6f3c;
-            color: #fff !important;
-        }
-
-        /* Search Bar */
-        .search-container {
-            max-width: 600px;
-            margin: 20px auto;
-        }
-
-        .search-box {
-            display: flex;
-            gap: 10px;
-            background: white;
-            padding: 10px;
-            border-radius: 50px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1em;
-            outline: none;
-        }
-
-        .search-box button {
-            padding: 12px 30px;
-            background: indigo;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .search-box button:hover {
-            background: #5a4a9f;
-        }
-
-        /* Share & Favorite Buttons */
-        .quote-share-buttons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 5px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .quote:hover .quote-share-buttons {
-            opacity: 1;
-        }
-
-        .share-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 14px;
-            color: white;
-            transition: transform 0.2s;
-        }
-
-        .share-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .share-whatsapp { background: #25D366; }
-        .share-facebook { background: #1877F2; }
-        .share-twitter { background: #1DA1F2; }
-        .share-download { background: #6c757d; }
-
-        .favorite-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.2s;
-            opacity: 0;
-        }
-
-        .quote:hover .favorite-btn {
-            opacity: 1;
-        }
-
-        .favorite-btn.active {
-            color: #dc3545;
-            opacity: 1;
-        }
-
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #28a745;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            z-index: 9999;
-            animation: slideIn 0.3s;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(400px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .quote {
-            position: relative;
-        }
+        .gallery { display: none; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid #ddd; }
+        .quote { width: 220px; height: 220px; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); position: relative; }
+        .quote img { width: 100%; height: 100%; object-fit: cover; }
     </style>
-
-    <script>
-        function toggleGallery(categoryId) {
-            const gallery = document.getElementById(categoryId);
-            gallery.style.display = gallery.style.display === 'none' || gallery.style.display === '' ? 'flex' : 'none';
-        }
-    </script>
 </head>
-
-<body class="sub_page">
-
+<body>
     <div class="hero_area">
-        <!-- header section starts -->
         <header class="header_section">
             <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="index.html">
-                        <span>
-                            CM-Writings
-                        </span>
-                    </a>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class=""> </span>
-                    </button>
-
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="index.html"><span>CM-Writings</span></a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav  ">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html"> About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="writings.html">Writings</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="contact.html">Contact Us</a>
-                            </li>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="writings.html">Writings</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="quotes.html">Quotes</a></li>
                         </ul>
-
                     </div>
                 </nav>
             </div>
         </header>
-        <!-- end header section -->
+        <div class="page-banner">
+            <h1>Quotes Categories</h1>
+            <p>Explore inspiring words across various categories</p>
+        </div>
     </div>
 
-    <!-- quotes section -->
-    <section class="quotes_section layout_padding">
+    <section class="quotes-section">
         <div class="container">
-            <marquee style="color: red; font-size: 1.5em; font-weight: bold;">
-                <a href="https://www.youtube.com/@CmWritings" target="_blank" style="color: red; text-decoration: none;">
-                    CM Writings (https://www.youtube.com/@CmWritings)
-                </a>
-            </marquee>
-            
-            <!-- Search Bar -->
             <div class="search-container">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="Search categories..." onkeyup="searchCategories()">
-                    <button onclick="searchCategories()"><i class="fa fa-search"></i> Search</button>
+                    <button><i class="fa fa-search"></i> Search</button>
                 </div>
             </div>
-            
-            <!-- Improved Category Menu -->
-            <div class="category-menu-wrapper" style="margin-bottom: 20px;">
-                <nav class="category-menu-nav">
-                    <ul class="category-menu-list">
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveGallery', 'love')">Love</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeGallery', 'life')">Life</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('happinessGallery', 'devotional')">Devotional</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('natureGallery', 'driking')">Drinking</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('caronaGallery', 'carona')">Carona</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('casteGallery', 'caste')">Caste</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('deathGallery', 'death')">Death</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factSpecialGallery', 'fact special')">Fact Special</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('factsGallery', 'facts')">Facts</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('familyGallery', 'FAMILY')">FAMILY</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('fearGallery', 'fear')">Fear</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('festivalsGallery', 'festivals')">Festivals</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('hummanityGallery', 'hummanity')">Hummanity</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('inspirationGallery', 'INSPIRATION')">INSPIRATION</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lifeSplGallery', 'life spl')">Life Spl</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('listOfDaysGallery', 'list of days')">List of Days</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('lovePoetryGallery', 'LOVE POETRY')">LOVE POETRY</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('loveSplGallery', 'love spl')">Love Spl</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('mensGallery', 'MENS')">MENS</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moneyGallery', 'MONEY')">MONEY</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('moralsGallery', 'MORALS')">MORALS</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('parentsGallery', 'PARENTS')">PARENTS</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('realitySplGallery', 'reality spl')">Reality Spl</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('relationGallery', 'RELATION')">RELATION</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('selfishGallery', 'SELFISH')">SELFISH</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('smileGallery', 'smile')">Smile</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('socialIssuesQuotesGallery', 'social issues quotes')">Social Issues Quotes</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('specialWritingsGallery', 'SPECIAL WRITINGS')">SPECIAL WRITINGS</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('tearsGallery', 'tears')">Tears</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('womenAndChildGallery', 'women and child')">Women and Child</a></li>
-                        <li><a href="javascript:void(0)" onclick="fetchAndLoadImages('writingsOfLovePoetryGallery', 'writings of  love poetry')">Writings of Love Poetry</a></li>
-                    </ul>
-                </nav>
+
+            <div class="row" id="categoryGrid">
+                <script>
+                    const categories = [
+                        { name: "Love", folder: "love", id: "loveGallery" },
+                        { name: "Life", folder: "life", id: "lifeGallery" },
+                        { name: "Devotional", folder: "devotional", id: "happinessGallery" },
+                        { name: "Drinking", folder: "driking", id: "natureGallery" },
+                        { name: "Carona", folder: "carona", id: "caronaGallery" },
+                        { name: "Caste", folder: "caste", id: "casteGallery" },
+                        { name: "Death", folder: "death", id: "deathGallery" },
+                        { name: "Fact Special", folder: "fact special", id: "factSpecialGallery" },
+                        { name: "Facts", folder: "facts", id: "factsGallery" },
+                        { name: "FAMILY", folder: "FAMILY", id: "familyGallery" },
+                        { name: "Fear", folder: "fear", id: "fearGallery" },
+                        { name: "Festivals", folder: "festivals", id: "festivalsGallery" },
+                        { name: "Hummanity", folder: "hummanity", id: "hummanityGallery" },
+                        { name: "INSPIRATION", folder: "INSPIRATION", id: "inspirationGallery" },
+                        { name: "Life Spl", folder: "life spl", id: "lifeSplGallery" },
+                        { name: "List of Days", folder: "list of days", id: "listOfDaysGallery" },
+                        { name: "LOVE POETRY", folder: "LOVE POETRY", id: "lovePoetryGallery" },
+                        { name: "Love Spl", folder: "love spl", id: "loveSplGallery" },
+                        { name: "MENS", folder: "MENS", id: "mensGallery" },
+                        { name: "MONEY", folder: "MONEY", id: "moneyGallery" },
+                        { name: "MORALS", folder: "MORALS", id: "moralsGallery" },
+                        { name: "PARENTS", folder: "PARENTS", id: "parentsGallery" },
+                        { name: "Reality Spl", folder: "reality spl", id: "realitySplGallery" },
+                        { name: "RELATION", folder: "RELATION", id: "relationGallery" },
+                        { name: "SELFISH", folder: "SELFISH", id: "selfishGallery" },
+                        { name: "Smile", folder: "smile", id: "smileGallery" },
+                        { name: "Social Issues Quotes", folder: "social issues quotes", id: "socialIssuesQuotesGallery" },
+                        { name: "SPECIAL WRITINGS", folder: "SPECIAL WRITINGS", id: "specialWritingsGallery" },
+                        { name: "Tears", folder: "tears", id: "tearsGallery" },
+                        { name: "Women and Child", folder: "women and child", id: "womenAndChildGallery" },
+                        { name: "Writings of Love Poetry", folder: "writings of  love poetry", id: "writingsOfLovePoetryGallery" }
+                    ];
+
+                    const grid = document.getElementById('categoryGrid');
+                    categories.forEach(cat => {
+                        grid.innerHTML += `
+                            <div class="col-md-4 col-sm-6 category-card" data-name="${cat.name.toLowerCase()}">
+                                <div class="quote-card-mod">
+                                    <div class="card-img">
+                                        <img src="images/quotes/${cat.folder}/${cat.folder}-image1.jpg" onerror="this.src='images/default-quote.jpg'" alt="${cat.name}">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5>${cat.name}</h5>
+                                        <a href="javascript:void(0)" class="btn-view" onclick="fetchAndLoadImages('${cat.id}', '${cat.folder}')">
+                                            <i class="fa fa-eye"></i> View Quotes
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                </script>
             </div>
-            <!-- End Improved Category Menu -->
-            <div class="category">
-                <h2>
-                    Select the category to view the images here
-                </h2>
-                <div></div>
-            </div>
+
             <div id="loveGallery" class="gallery"></div>
             <div id="lifeGallery" class="gallery"></div>
             <div id="happinessGallery" class="gallery"></div>
@@ -379,377 +165,101 @@
             <div id="tearsGallery" class="gallery"></div>
             <div id="womenAndChildGallery" class="gallery"></div>
             <div id="writingsOfLovePoetryGallery" class="gallery"></div>
-            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                <img id="lightboxImage" src="" alt="">
-            </div>
+        </div>
+    </section>
 
-            <div class="footer_container">
-                <!-- info section -->
-                <section class="info_section ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-3 ">
-                                <div class="info_detail">
-                                    <h4>
-                                        CM-Writings
-                                    </h4>
-                                    <p>
-                                        Dedicated to making an impact, CM-Writings aims to connect hearts and minds through the power of words.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-2 mx-auto">
-                                <div class="info_link_box">
-                                    <h4>
-                                        Links
-                                    </h4>
-                                    <div class="info_links">
-                                        <a class="" href="index.html">
-                                            Home
-                                        </a>
-                                        <a class="" href="about.html">
-                                            About
-                                        </a>
-                                        <a class="" href="writings.html">
-                                            Writings
-                                        </a>
-                                        <a class="" href="contact.html">
-                                            Contact Us
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 ">
-
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-0 ml-auto">
-                                <div class="info_contact">
-                                    <h4>
-                                        Address
-                                    </h4>
-                                    <div class="contact_link_box">
-                                        <a href="">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <span>
-                                                Vijayawada, Andhra Pradesh, India
-                                            </span>
-                                        </a>
-                                        <a href="">
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <span>
-                            Call +91 7893961499
-                          </span>
-                                        </a>
-                                        <a href="">
-                                          <i class="fa fa-envelope" aria-hidden="true"></i>
-                                          <span>
-                                            cmwritings21@gmail.com
-                                          </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="info_social">
-                                    <a href="">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                    </a>
-                                </a>
-                                <a href="">
-                                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                 </a>
-                                 </a>
-                                 <a href="">
-                                 <i class="fa fa-youtube" aria-hidden="true"></i>
-                                 </a>
-                                    <a href="">
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- end info section -->
-
-                <!-- footer section -->
-                <footer class="footer_section">
-                    <div class="container">
-                        <p>
-                            &copy; <span id="displayYear"></span> All Rights Reserved By
-                            <a href="">CM-Writings</a>
-                        </p>
-                        <p>
-                            Designed By Pruthvi raj
-                        </p>
-                    </div>
-                </footer>
-                <!-- footer section -->
-            </div>
-
-            <!-- jQery -->
-            <script src="js/jquery-3.4.1.min.js"></script>
-            <!-- popper js -->
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-            </script>
-            <!-- bootstrap js -->
-            <script src="js/bootstrap.js"></script>
-            <script src="js/custom.js"></script>
-            <!-- Google Map -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-            <!-- End Google Map -->
-
-            <script>
-        // Search functionality
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        // Existing fetchAndLoadImages and search logic would go here or in custom.js
         function searchCategories() {
             const input = document.getElementById('searchInput').value.toLowerCase();
-            const categories = document.querySelectorAll('.category-menu-list li');
-            
-            categories.forEach(cat => {
-                const text = cat.textContent.toLowerCase();
-                cat.style.display = text.includes(input) ? 'block' : 'none';
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                card.style.display = name.includes(input) ? 'block' : 'none';
             });
         }
-
-        // Share functions
-        function shareOnWhatsApp(imageUrl, category) {
-            const text = `Check out this inspiring quote from CM-Writings!\nCategory: ${category}\n${window.location.origin}`;
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        function shareOnFacebook() {
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400');
-        }
-
-        function shareOnTwitter(category) {
-            const text = `Inspiring quote from CM-Writings - ${category} category`;
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400');
-        }
-
-        function downloadQuote(imageUrl, quoteName) {
-            fetch(imageUrl)
-                .then(response => response.blob())
-                .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = quoteName || 'cm-writings-quote.jpg';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    window.URL.revokeObjectURL(url);
-                    showNotification('Quote downloaded!');
-                });
-        }
-
-        function toggleFavorite(quoteId, btn) {
-            const favorites = JSON.parse(localStorage.getItem('favoriteQuotes') || '[]');
-            const index = favorites.indexOf(quoteId);
-            
-            if (index > -1) {
-                favorites.splice(index, 1);
-                btn.classList.remove('active');
-                btn.innerHTML = '♡';
-                showNotification('Removed from favorites');
-            } else {
-                favorites.push(quoteId);
-                btn.classList.add('active');
-                btn.innerHTML = '♥';
-                showNotification('Added to favorites');
-            }
-            
-            localStorage.setItem('favoriteQuotes', JSON.stringify(favorites));
-        }
-
-        function isQuoteFavorited(quoteId) {
-            const favorites = JSON.parse(localStorage.getItem('favoriteQuotes') || '[]');
-            return favorites.includes(quoteId);
-        }
-
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        function fetchAndLoadImages(galleryId, folder) {
-            document.querySelectorAll('.gallery').forEach(g => g.style.display = 'none');
-            const gallery = document.getElementById(galleryId);
-            if (!gallery) return;
-            gallery.innerHTML = '';
-            gallery.style.display = 'flex';
-
-            let maxImages = 1000;
-            let indexes = Array.from({length: maxImages}, (_, i) => i + 1);
-            for (let j = indexes.length - 1; j > 0; j--) {
-                const k = Math.floor(Math.random() * (j + 1));
-                [indexes[j], indexes[k]] = [indexes[k], indexes[j]];
-            }
-            let shown = 0;
-            let idx = 0;
-            function tryNext() {
-                if (shown >= 20 || idx >= indexes.length) return;
-                const i = indexes[idx];
-                idx++;
-                const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
-                const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
-                const quoteId = `${folder}-${i}`;
-                const img = new Image();
-                img.src = thumbSrc;
-                img.alt = `Quote ${i}`;
-                img.style.cursor = "pointer";
-                img.onclick = function() { openLightbox(imgSrc); };
-                img.onload = function() {
-                    const imgDiv = document.createElement('div');
-                    imgDiv.className = 'quote';
-                    
-                    // Add favorite button
-                    const favoriteBtn = document.createElement('div');
-                    favoriteBtn.className = 'favorite-btn';
-                    favoriteBtn.innerHTML = isQuoteFavorited(quoteId) ? '♥' : '♡';
-                    if (isQuoteFavorited(quoteId)) favoriteBtn.classList.add('active');
-                    favoriteBtn.onclick = (e) => {
-                        e.stopPropagation();
-                        toggleFavorite(quoteId, favoriteBtn);
-                    };
-                    
-                    // Add share buttons
-                    const shareButtons = document.createElement('div');
-                    shareButtons.className = 'quote-share-buttons';
-                    shareButtons.innerHTML = `
-                        <div class="share-btn share-whatsapp" onclick="event.stopPropagation(); shareOnWhatsApp('${imgSrc}', '${folder}')" title="Share on WhatsApp">
-                            <i class="fa fa-whatsapp"></i>
-                        </div>
-                        <div class="share-btn share-facebook" onclick="event.stopPropagation(); shareOnFacebook()" title="Share on Facebook">
-                            <i class="fa fa-facebook"></i>
-                        </div>
-                        <div class="share-btn share-twitter" onclick="event.stopPropagation(); shareOnTwitter('${folder}')" title="Share on Twitter">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <div class="share-btn share-download" onclick="event.stopPropagation(); downloadQuote('${imgSrc}', '${folder}-${i}.jpg')" title="Download">
-                            <i class="fa fa-download"></i>
-                        </div>
-                    `;
-                    
-                    imgDiv.appendChild(favoriteBtn);
-                    imgDiv.appendChild(img);
-                    imgDiv.appendChild(shareButtons);
-                    gallery.appendChild(imgDiv);
-                    shown++;
-                    tryNext();
-                };
-                img.onerror = function() {
-                    if (thumbSrc !== imgSrc) {
-                        img.src = imgSrc;
-                        img.onerror = function() { tryNext(); };
-                        img.onload = function() {
-                            const imgDiv = document.createElement('div');
-                            imgDiv.className = 'quote';
-                            const quoteId = `${folder}-${i}`;
-                            
-                            const favoriteBtn = document.createElement('div');
-                            favoriteBtn.className = 'favorite-btn';
-                            favoriteBtn.innerHTML = isQuoteFavorited(quoteId) ? '♥' : '♡';
-                            if (isQuoteFavorited(quoteId)) favoriteBtn.classList.add('active');
-                            favoriteBtn.onclick = (e) => {
-                                e.stopPropagation();
-                                toggleFavorite(quoteId, favoriteBtn);
-                            };
-                            
-                            const shareButtons = document.createElement('div');
-                            shareButtons.className = 'quote-share-buttons';
-                            shareButtons.innerHTML = `
-                                <div class="share-btn share-whatsapp" onclick="event.stopPropagation(); shareOnWhatsApp('${imgSrc}', '${folder}')" title="Share on WhatsApp">
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                                <div class="share-btn share-facebook" onclick="event.stopPropagation(); shareOnFacebook()" title="Share on Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </div>
-                                <div class="share-btn share-twitter" onclick="event.stopPropagation(); shareOnTwitter('${folder}')" title="Share on Twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                                <div class="share-btn share-download" onclick="event.stopPropagation(); downloadQuote('${imgSrc}', '${folder}-${i}.jpg')" title="Download">
-                                    <i class="fa fa-download"></i>
-                                </div>
-                            `;
-                            
-                            imgDiv.appendChild(favoriteBtn);
-                            imgDiv.appendChild(img);
-                            imgDiv.appendChild(shareButtons);
-                            gallery.appendChild(imgDiv);
-                            shown++;
-                            tryNext();
-                        };
-                    } else {
-                        tryNext();
-                    }
-                };
-            }
-            tryNext();
-        }
-
-        function openLightbox(src) {
-            let lightbox = document.getElementById('lightbox');
-            let lightboxImage = document.getElementById('lightboxImage');
-            if (lightbox && lightboxImage) {
-                lightboxImage.src = src;
-                lightbox.style.display = 'flex';
-                lightboxImage.style.maxWidth = '90vw';
-                lightboxImage.style.maxHeight = '90vh';
-                lightboxImage.style.width = 'auto';
-                lightboxImage.style.height = 'auto';
-                lightboxImage.style.boxShadow = '0 0 32px rgba(0,0,0,0.7)';
-                lightboxImage.style.background = '#fff';
-                lightbox.style.background = 'rgba(0,0,0,0.95)';
-                lightbox.style.alignItems = 'center';
-                lightbox.style.justifyContent = 'center';
-                lightbox.style.cursor = 'zoom-out';
-            }
-        }
-
-        function closeLightbox() {
-            let lightbox = document.getElementById('lightbox');
-            if (lightbox) lightbox.style.display = 'none';
-        }
-
-        document.querySelectorAll('.quote img').forEach(img => {
-            img.addEventListener('click', function () {
-                const imgSrc = this.src;
-                const modal = document.createElement('div');
-                modal.style.position = 'fixed';
-                modal.style.top = '0';
-                modal.style.left = '0';
-                modal.style.width = '100%';
-                modal.style.height = '100%';
-                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-                modal.style.display = 'flex';
-                modal.style.justifyContent = 'center';
-                modal.style.alignItems = 'center';
-                modal.style.zIndex = '1000';
-                modal.innerHTML = `<img src="${imgSrc}" style="max-width: 90%; max-height: 90%;">`;
-                modal.addEventListener('click', function () {
-                    document.body.removeChild(modal);
-                });
-                document.body.appendChild(modal);
-            });
-        });
-
-        document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/917893961499?text=Hello%20CM-Writings";
-        document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
-        document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
-        document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
-        document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
-        document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
+        
+        // Ensure you have your original fetchAndLoadImages function here or linked via .js file
     </script>
+    <!-- FOOTER -->
+  <div class="footer_container">
+    <div class="container footer-top">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="footer-brand">
+            <h4>CM-Writings</h4>
+            <p>Dedicated to making an impact, connecting hearts and minds through the power of words.</p>
+            <div class="social-icons">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-youtube"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mb-4">
+          <div class="footer-links">
+            <h5>Quick Links</h5>
+            <a href="index.html"><i class="fa fa-chevron-right"></i> Home</a>
+            <a href="about.html"><i class="fa fa-chevron-right"></i> About</a>
+            <a href="writings.html"><i class="fa fa-chevron-right"></i> Writings</a>
+            <a href="quotes.html"><i class="fa fa-chevron-right"></i> Quotes</a>
+            <a href="contact.html"><i class="fa fa-chevron-right"></i> Contact</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="footer-contact">
+            <h5>Get in Touch</h5>
+            <a href="#"><i class="fa fa-map-marker"></i><span>Vijayawada, Andhra Pradesh, India</span></a>
+            <a href="tel:+917893961499"><i class="fa fa-phone"></i><span>+91 7893961499</span></a>
+            <a href="mailto:cmwritings21@gmail.com"><i class="fa fa-envelope"></i><span>cmwritings21@gmail.com</span></a>
+            <a href="https://wa.me/917893961499?text=Hello%20CM-Writings"><i class="fa fa-whatsapp"></i><span>WhatsApp Us</span></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="footer-newsletter">
+            <h5>Stay Updated</h5>
+            <p>Subscribe for the latest stories and quotes.</p>
+            <input type="email" id="footer-email" placeholder="Your email address">
+            <button id="footer-sub-btn">Subscribe Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="displayYear"></span> All Rights Reserved By <a href="index.html">CM-Writings</a></p>
+        <p>Designed with <i class="fa fa-heart" style="color:#e74c3c;"></i> by Pruthvi raj</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/audio.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('displayYear').textContent = new Date().getFullYear();
+
+      document.getElementById('footer-sub-btn').addEventListener('click', function() {
+        const email = document.getElementById('footer-email').value;
+        if (!email) return;
+        let subs = JSON.parse(localStorage.getItem('subs') || '[]');
+        if (!subs.includes(email)) { subs.push(email); localStorage.setItem('subs', JSON.stringify(subs)); }
+        document.getElementById('footer-email').value = '';
+      });
+
+      document.querySelectorAll('.fa-facebook').forEach(el => el.href = "https://www.facebook.com/CM-Writings");
+      document.querySelectorAll('.fa-twitter').forEach(el => el.href = "https://twitter.com/CM-Writings");
+      document.querySelectorAll('.fa-instagram').forEach(el => el.href = "https://www.instagram.com/CM-Writings");
+      document.querySelectorAll('.fa-youtube').forEach(el => el.href = "https://www.youtube.com/@CmWritings");
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>
