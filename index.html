@@ -429,15 +429,18 @@
                   </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
-                  <div class="detail-box" style="background: rgba(255,255,255,0.92); border-radius: 12px; padding: 32px;">
-                    <h1 style="color: #222831;">
-                      CM-WRITINGS
-                    </h1>
-                    <p style="color: #222831;">
+                  <div class="detail-box fade-in">
+                    <h1>CM-WRITINGS</h1>
+                    <p>
                       A passionate storyteller, CHANDRA MOHAN crafts engaging tales that inspire and resonate with readers. With a unique voice and keen observation of life, their work spans genres, blending creativity and emotion. Dedicated to making an impact, they aim to connect hearts and minds through the power of words.
                     </p>
-                    <div class="btn-box">
-
+                    <div class="btn-box" style="margin-top: 30px;">
+                      <a href="writings.html" class="btn-modern">
+                        <i class="fa fa-book"></i> Explore Writings
+                      </a>
+                      <a href="quotes.html" class="btn-modern btn-secondary" style="margin-left: 15px;">
+                        <i class="fa fa-quote-left"></i> View Quotes
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -590,19 +593,21 @@
   <!-- end case section -->
 
   <!-- Quote of the Day Section -->
-  <section class="quote-of-day-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 0;">
+  <section class="quote-of-day-section">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div style="text-align: center; color: white;">
-            <h2 style="margin-bottom: 30px; font-weight: bold;">✨ Quote of the Day ✨</h2>
-            <div id="quote-of-day" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 15px; max-width: 800px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-              <p style="font-size: 1.5em; font-style: italic; margin-bottom: 20px; line-height: 1.6;"></p>
-              <span style="font-size: 1.1em; opacity: 0.9;"></span>
+          <div style="text-align: center;">
+            <h2 style="margin-bottom: 30px; font-weight: bold; color: var(--primary-color);">
+              ✨ Quote of the Day ✨
+            </h2>
+            <div id="quote-of-day" class="fade-in">
+              <p style="font-size: 1.5em; font-style: italic; margin-bottom: 20px; line-height: 1.6; color: var(--text-dark);"></p>
+              <span style="font-size: 1.1em; color: var(--secondary-color); font-weight: 600;"></span>
             </div>
             <div style="margin-top: 30px;">
-              <a href="quotes.html" style="display: inline-block; padding: 12px 30px; background-color: white; color: #667eea; border-radius: 25px; text-decoration: none; font-weight: bold; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                Explore More Quotes
+              <a href="quotes.html" class="btn-modern">
+                <i class="fa fa-quote-left"></i> Explore More Quotes
               </a>
             </div>
           </div>
@@ -612,22 +617,24 @@
   </section>
 
   <!-- Newsletter Section -->
-  <section class="newsletter-section" style="background: #f8f9fa; padding: 60px 0;">
+  <section class="newsletter-section">
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <div style="text-align: center; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-            <i class="fa fa-envelope" style="font-size: 3em; color: indigo; margin-bottom: 20px;"></i>
-            <h3 style="margin-bottom: 15px; color: #333;">Subscribe to My Newsletter</h3>
-            <p style="color: #666; margin-bottom: 30px;">Get new stories and quotes delivered to your inbox. Join our growing community of readers!</p>
+          <div style="text-align: center; padding: 50px;">
+            <div style="margin-bottom: 30px;">
+              <i class="fa fa-envelope" style="font-size: 4em; color: var(--secondary-color);"></i>
+            </div>
+            <h3 style="margin-bottom: 15px; color: var(--primary-color); font-weight: 700;">Subscribe to My Newsletter</h3>
+            <p style="color: var(--text-light); margin-bottom: 40px; font-size: 1.1em;">Get new stories and quotes delivered to your inbox. Join our growing community of readers!</p>
             <form id="newsletter-form" style="max-width: 500px; margin: 0 auto;">
-              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                <input type="email" id="newsletter-email" placeholder="Enter your email" required style="flex: 1; min-width: 250px; padding: 12px 20px; border: 2px solid #e0e0e0; border-radius: 25px; font-size: 1em; outline: none;" onfocus="this.style.borderColor='indigo'" onblur="this.style.borderColor='#e0e0e0'">
-                <button type="submit" style="padding: 12px 30px; background-color: indigo; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#5a4a9f'" onmouseout="this.style.backgroundColor='indigo'">
-                  Subscribe
+              <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required style="flex: 1; min-width: 250px; padding: 15px 25px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 1em; outline: none; transition: border-color 0.3s;">
+                <button type="submit" class="btn-modern">
+                  <i class="fa fa-paper-plane"></i> Subscribe
                 </button>
               </div>
-              <p id="newsletter-message" style="margin-top: 15px; font-size: 0.9em;"></p>
+              <p id="newsletter-message" style="margin-top: 20px; font-size: 0.9em;"></p>
             </form>
           </div>
         </div>
@@ -871,6 +878,37 @@
   <!-- End Google Map -->
 
   <script>
+    // Initialize animations
+    function initAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Newsletter form enhancement
+    document.getElementById('newsletter-email').addEventListener('focus', function() {
+      this.style.borderColor = 'var(--secondary-color)';
+      this.style.boxShadow = '0 0 0 3px rgba(52, 152, 219, 0.1)';
+    });
+
+    document.getElementById('newsletter-email').addEventListener('blur', function() {
+      this.style.borderColor = '#e0e0e0';
+      this.style.boxShadow = 'none';
+    });
+
     // Quote of the Day
     const quotes = [
       {text: "Every word written is a step towards touching someone's heart.", category: "Inspiration"},
@@ -929,7 +967,14 @@
     document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
     
     // Initialize on page load
-    window.addEventListener('DOMContentLoaded', displayQuoteOfDay);
+    window.addEventListener('DOMContentLoaded', function() {
+      displayQuoteOfDay();
+      initAnimations();
+      
+      // Add fade-in class to elements
+      document.querySelector('.detail-box').classList.add('fade-in');
+      document.querySelector('#quote-of-day').classList.add('fade-in');
+    });
   </script>
 </body>
 </html>

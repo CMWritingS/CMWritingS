@@ -32,52 +32,169 @@
   <link href="css/modern-colors.css" rel="stylesheet" />
 
   <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+      --bg-light: #ecf0f1;
+      --bg-white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .hero_area {
+      background: var(--gradient-primary);
+      border-radius: 0;
+    }
+
+    .header_section {
+      padding: 20px 0;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand span {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(45deg, #fff, #f8f9fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link:hover,
+    .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .about_section {
+      background: var(--bg-white);
+      padding: 100px 0;
+      border-radius: 0;
+    }
+
+    .about_section .detail-box {
+      background: var(--bg-white);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 50px;
+    }
+
+    .about_section .img-box {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about_section .img-box img {
+      transition: transform 0.3s ease;
+    }
+
+    .about_section .img-box:hover img {
+      transform: scale(1.05);
+    }
+
     .author-stats {
-      display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-      flex-wrap: wrap;
+      background: var(--bg-light);
+      padding: 60px 0;
+      margin: 60px 0;
+      border-radius: 20px;
     }
 
     .stat-box {
       text-align: center;
-      padding: 20px;
-      min-width: 150px;
+      padding: 30px;
+      background: var(--bg-white);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      margin: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
     }
 
     .stat-box h3 {
-      font-size: 2.5em;
-      color: indigo;
-      margin: 0;
-      font-weight: bold;
+      font-size: 3rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
-    .stat-box p {
-      color: #666;
-      margin-top: 10px;
+    .quote-highlight {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-highlight::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.05"><circle cx="50" cy="50" r="40"/></svg>');
+      background-size: 50px 50px;
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .writing-journey {
-      background: #f8f9fa;
-      padding: 40px;
-      border-radius: 15px;
-      margin: 40px 0;
+      background: var(--bg-white);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin: 60px 0;
     }
 
     .journey-item {
       display: flex;
-      margin: 20px 0;
       align-items: center;
+      margin: 30px 0;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .journey-item:hover {
+      transform: translateX(10px);
     }
 
     .journey-year {
-      background: indigo;
+      background: var(--gradient-primary);
       color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 15px 25px;
+      border-radius: 50px;
       font-weight: bold;
-      min-width: 100px;
+      min-width: 120px;
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .journey-content {
@@ -85,45 +202,86 @@
       flex: 1;
     }
 
-    .skills-section {
-      margin: 40px 0;
+    .journey-content h5 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .skill-tag {
       display: inline-block;
-      background: #e9ecef;
-      padding: 8px 16px;
-      margin: 5px;
-      border-radius: 20px;
-      color: #495057;
-    }
-
-    .quote-highlight {
-      background: indigo;
+      background: var(--gradient-secondary);
       color: white;
-      padding: 30px;
-      border-radius: 15px;
-      font-style: italic;
-      font-size: 1.2em;
-      text-align: center;
-      margin: 40px 0;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
-    .social-proof {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 30px 0;
-      flex-wrap: wrap;
+    .skill-tag:hover {
+      transform: translateY(-2px);
     }
 
     .social-proof-item {
       text-align: center;
+      padding: 30px;
+      background: var(--bg-white);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      margin: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-proof-item:hover {
+      transform: translateY(-5px);
     }
 
     .social-proof-item i {
-      font-size: 2em;
-      color: indigo;
+      font-size: 3em;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      margin: 10px;
+    }
+
+    .btn-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -180,20 +338,20 @@
     <div class="container  ">
       <div class="row">
         <div class="col-md-6">
-          <div class="detail-box">
+          <div class="detail-box fade-in">
             <div class="heading_container">
-              <h2>
+              <h2 style="color: var(--primary-color); font-weight: 700; margin-bottom: 30px;">
                 About Me
               </h2>
             </div>
-            <p>
+            <p style="font-size: 1.1em; line-height: 1.8; color: var(--text-light);">
               A passionate storyteller, CHANDRA MOHAN crafts engaging tales that inspire and resonate with readers. With a unique voice and keen observation of life, their work spans genres, blending creativity and emotion. Dedicated to making an impact, they aim to connect hearts and minds through the power of words.
             </p>
           </div>
         </div>
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/slider/slider-img.jpeg" alt="">
+        <div class="col-md-6">
+          <div class="img-box fade-in">
+            <img src="images/slider/slider-img.jpeg" alt="Chandra Mohan" loading="lazy">
           </div>
         </div>
 
@@ -290,15 +448,15 @@
       </div>
 
       <!-- Call to Action -->
-      <div style="text-align: center; margin-top: 50px;">
-        <h3>Connect With Me</h3>
-        <p style="margin: 20px 0;">Follow my journey and stay updated with new writings</p>
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-          <a href="writings.html" style="display: inline-block; padding: 12px 30px; background-color: indigo; color: white; border-radius: 5px; text-decoration: none;">
-            Explore Writings
+      <div style="text-align: center; margin-top: 60px;" class="fade-in">
+        <h3 style="color: var(--primary-color); font-weight: 700; margin-bottom: 20px;">Connect With Me</h3>
+        <p style="margin: 20px 0; color: var(--text-light); font-size: 1.1em;">Follow my journey and stay updated with new writings</p>
+        <div>
+          <a href="writings.html" class="btn-modern">
+            <i class="fa fa-book"></i> Explore Writings
           </a>
-          <a href="contact.html" style="display: inline-block; padding: 12px 30px; background-color: #f8842b; color: white; border-radius: 5px; text-decoration: none;">
-            Get in Touch
+          <a href="contact.html" class="btn-modern btn-secondary">
+            <i class="fa fa-envelope"></i> Get in Touch
           </a>
         </div>
       </div>
@@ -431,6 +589,36 @@
   <!-- End Google Map -->
 
   <script>
+    // Initialize animations
+    function initAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Add fade-in classes and initialize
+    window.addEventListener('DOMContentLoaded', function() {
+      // Add fade-in class to elements
+      document.querySelectorAll('.detail-box, .img-box, .stat-box, .journey-item, .social-proof-item').forEach(el => {
+        el.classList.add('fade-in');
+      });
+      
+      initAnimations();
+    });
+
     document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/917893961499?text=Hello%20CM-Writings";
     document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
     document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
