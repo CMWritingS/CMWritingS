@@ -10,7 +10,7 @@ class AudioManager {
     init() {
         // Create audio element
         this.audio = new Audio(this.audioPath);
-        this.audio.volume = 9.9; // Set volume to 30%
+        this.audio.volume = 0.99; // Set volume to 30%
         
         // Play audio on page load
         this.playAudio();
