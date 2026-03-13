@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Chandra Mohan, Writing Tips, Telugu Literature, Writing Process, CM Writings Blog" />
+  <meta name="description" content="Read writing insights, tips, and behind-the-scenes stories from Chandra Mohan's creative journey." />
+  <meta name="author" content="Chandra Mohan" />
+
+  <title>Blog - CM-Writings</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/modern-colors.css" rel="stylesheet" />
+
+  <style>
+    .blog-section {
+      padding: 60px 0;
+    }
+
+    .blog-post {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-post-image {
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3em;
+    }
+
+    .blog-post-content {
+      padding: 30px;
+    }
+
+    .blog-post-title {
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .blog-post-meta {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .blog-post-excerpt {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: indigo;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .read-more-btn:hover {
+      background: #5a4a9f;
+      color: white;
+      text-decoration: none;
+    }
+
+    .blog-categories {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .category-filter {
+      padding: 8px 20px;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .category-filter.active {
+      background: indigo;
+      color: white;
+      border-color: indigo;
+    }
+
+    .category-filter:hover {
+      border-color: indigo;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>CM-Writings</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="writings.html">Writings</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>My Writing Journey</h2>
+        <p>Insights, tips, and stories from behind the scenes</p>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="blog-categories">
+        <div class="category-filter active" onclick="filterPosts('all')">All Posts</div>
+        <div class="category-filter" onclick="filterPosts('writing-tips')">Writing Tips</div>
+        <div class="category-filter" onclick="filterPosts('inspiration')">Inspiration</div>
+        <div class="category-filter" onclick="filterPosts('behind-scenes')">Behind the Scenes</div>
+        <div class="category-filter" onclick="filterPosts('thoughts')">Thoughts</div>
+      </div>
+
+      <div class="row" id="blog-posts">
+        <!-- Blog Post 1 -->
+        <div class="col-md-6 blog-post-item" data-category="writing-tips">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">The Art of Writing Emotional Stories</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Writing Tips
+              </div>
+              <p class="blog-post-excerpt">
+                Every story begins with an emotion. Learn how I craft tales that touch hearts and resonate with readers across different walks of life. From finding inspiration in everyday moments to developing characters that feel real...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('writing-emotional-stories')">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-6 blog-post-item" data-category="inspiration">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-lightbulb-o"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">Finding Inspiration in Daily Life</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Inspiration
+              </div>
+              <p class="blog-post-excerpt">
+                Inspiration is everywhere if you know where to look. From conversations with strangers to quiet moments of reflection, discover how ordinary experiences become extraordinary stories...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('finding-inspiration')">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-6 blog-post-item" data-category="behind-scenes">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-camera"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">Behind the Story: 'Coffee Shop'</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Behind the Scenes
+              </div>
+              <p class="blog-post-excerpt">
+                Take a peek behind the creation of one of my most beloved stories. From the initial spark of an idea during a rainy afternoon to the final draft, here's how 'Coffee Shop' came to life...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('behind-coffee-shop')">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="col-md-6 blog-post-item" data-category="thoughts">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-heart"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">The Power of Words in Telugu Literature</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Thoughts
+              </div>
+              <p class="blog-post-excerpt">
+                Telugu literature has a rich tradition of storytelling that spans centuries. Explore how modern writers can honor this heritage while creating contemporary narratives that speak to today's readers...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('telugu-literature')">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="col-md-6 blog-post-item" data-category="writing-tips">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-book"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">Creating Memorable Quotes</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Writing Tips
+              </div>
+              <p class="blog-post-excerpt">
+                A good quote can stay with someone forever. Learn the techniques I use to distill complex emotions and thoughts into powerful, memorable phrases that resonate across different audiences...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('creating-quotes')">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+        <div class="col-md-6 blog-post-item" data-category="inspiration">
+          <div class="blog-post">
+            <div class="blog-post-image">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="blog-post-content">
+              <h4 class="blog-post-title">Connecting with Readers</h4>
+              <div class="blog-post-meta">
+                <i class="fa fa-calendar"></i> December 2024 | <i class="fa fa-tag"></i> Inspiration
+              </div>
+              <p class="blog-post-excerpt">
+                The greatest joy of writing comes from knowing your words have touched someone's life. Discover how building a genuine connection with readers transforms both the writer and the audience...
+              </p>
+              <a href="#" class="read-more-btn" onclick="openBlogPost('connecting-readers')">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 15px;">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to get notified about new blog posts and writings</p>
+        <form id="blog-newsletter" style="max-width: 400px; margin: 0 auto;">
+          <div style="display: flex; gap: 10px;">
+            <input type="email" placeholder="Your email" required style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+            <button type="submit" style="padding: 12px 25px; background: indigo; color: white; border: none; border-radius: 5px; font-weight: bold;">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer_container">
+    <section class="info_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="info_detail">
+              <h4>CM-Writings</h4>
+              <p>Dedicated to making an impact, CM-Writings aims to connect hearts and minds through the power of words.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 mx-auto">
+            <div class="info_link_box">
+              <h4>Links</h4>
+              <div class="info_links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="writings.html">Writings</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3"></div>
+          <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+            <div class="info_contact">
+              <h4>Address</h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>Vijayawada, Andhra Pradesh, India</span>
+                </a>
+                <a href="">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>Call +91 7893961499</span>
+                </a>
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>cmwritings21@gmail.com</span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+              <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer_section">
+      <div class="container">
+        <p>&copy; <span id="displayYear"></span> All Rights Reserved By <a href="">CM-Writings</a></p>
+        <p>Designed By Pruthvi raj</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+    // Filter blog posts
+    function filterPosts(category) {
+      const posts = document.querySelectorAll('.blog-post-item');
+      const filters = document.querySelectorAll('.category-filter');
+      
+      // Update active filter
+      filters.forEach(f => f.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Show/hide posts
+      posts.forEach(post => {
+        if (category === 'all' || post.dataset.category === category) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    }
+
+    // Open blog post (placeholder)
+    function openBlogPost(postId) {
+      alert(`This would open the full blog post: ${postId}\nIn a real implementation, this would navigate to a detailed blog post page.`);
+    }
+
+    // Newsletter signup
+    document.getElementById('blog-newsletter').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing to the blog updates!');
+      this.reset();
+    });
+
+    // Social media links
+    document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/917893961499?text=Hello%20CM-Writings";
+    document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
+    document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
+    document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
+    document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
+    document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
+  </script>
+</body>
+</html>

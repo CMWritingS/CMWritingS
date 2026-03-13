@@ -8,24 +8,366 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="Chandra Mohan, Telugu Writer, Stories, Quotes, Poetry, CM Writings" />
+  <meta name="description" content="CM-Writings - Inspiring Telugu stories and quotes by Chandra Mohan. Explore love, life, inspiration, and social themes." />
+  <meta name="author" content="Chandra Mohan" />
 
-  <title>CM-Writings</title>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="CM-Writings - Telugu Stories & Quotes" />
+  <meta property="og:description" content="Inspiring stories and quotes by Chandra Mohan" />
+  <meta property="og:image" content="https://cmwritings.github.io/CMWritingS/images/slider/slider-img.jpeg" />
+  <meta property="og:url" content="https://cmwritings.github.io/CMWritingS/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
+  <style>
+    /* Modern Color Scheme */
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+      --bg-light: #ecf0f1;
+      --bg-white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
 
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+    /* Hero Section Redesign */
+    .hero_area {
+      background: var(--gradient-primary);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-  <link href="css/modern-colors.css" rel="stylesheet" />
+    .hero_area::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>');
+      background-size: cover;
+    }
+
+    /* Navigation Redesign */
+    .header_section {
+      padding: 20px 0;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .navbar-brand span {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(45deg, #fff, #f8f9fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .custom_nav-container .navbar-nav .nav-item .nav-link:hover,
+    .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Slider Section Redesign */
+    .slider_section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .slider_section .detail-box {
+      background: rgba(255,255,255,0.95);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .slider_section .detail-box h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    .slider_section .detail-box p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* Quote of the Day Redesign */
+    .quote-of-day-section {
+      background: var(--bg-white);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .quote-of-day-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--gradient-primary);
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    }
+
+    #quote-of-day {
+      background: var(--bg-white);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border-left: 5px solid var(--secondary-color);
+      position: relative;
+      margin-top: 50px;
+    }
+
+    #quote-of-day::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      font-size: 4rem;
+      color: var(--secondary-color);
+      opacity: 0.3;
+    }
+
+    /* Newsletter Section Redesign */
+    .newsletter-section {
+      background: var(--gradient-secondary);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.05"><circle cx="50" cy="50" r="40"/></svg>');
+      background-size: 100px 100px;
+    }
+
+    .newsletter-section .container > div {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* About Section Redesign */
+    .about_section {
+      background: var(--bg-light);
+      border-radius: 0;
+      padding: 100px 0;
+    }
+
+    .about_section .detail-box {
+      padding: 40px;
+      background: var(--bg-white);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .about_section .img-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .about_section .img-box img {
+      transition: transform 0.3s ease;
+    }
+
+    .about_section .img-box:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Case Section Redesign */
+    .case_section {
+      padding: 100px 0;
+      background: var(--bg-white);
+    }
+
+    .case_section .box {
+      background: var(--bg-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .case_section .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .case_section .box .img-box {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
+    }
+
+    .case_section .box .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .case_section .box:hover .img-box img {
+      transform: scale(1.1);
+    }
+
+    .case_section .box .detail-box {
+      padding: 40px 30px;
+    }
+
+    .case_section .box .detail-box h5 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .case_section .box .detail-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--secondary-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .case_section .box .detail-box a:hover {
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+
+    /* Footer Redesign */
+    .footer_container {
+      background: var(--primary-color);
+      border-radius: 0;
+      padding-top: 80px;
+    }
+
+    .info_section {
+      position: relative;
+    }
+
+    .info_section::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--primary-color);
+      clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .info_social a {
+      width: 45px;
+      height: 45px;
+      background: var(--secondary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .info_social a:hover {
+      background: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .slider_section .detail-box h1 {
+        font-size: 2.5rem;
+      }
+      
+      .slider_section .detail-box {
+        padding: 30px;
+      }
+      
+      #quote-of-day {
+        padding: 30px;
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Button Styles */
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+    }
+  </style>
 
 </head>
 
@@ -56,6 +398,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="writings.html">Writings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
@@ -235,6 +583,54 @@
           </div>
         </div>
         -->
+      </div>
+    </div>
+  </section>
+
+  <!-- end case section -->
+
+  <!-- Quote of the Day Section -->
+  <section class="quote-of-day-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="text-align: center; color: white;">
+            <h2 style="margin-bottom: 30px; font-weight: bold;">✨ Quote of the Day ✨</h2>
+            <div id="quote-of-day" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 40px; border-radius: 15px; max-width: 800px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+              <p style="font-size: 1.5em; font-style: italic; margin-bottom: 20px; line-height: 1.6;"></p>
+              <span style="font-size: 1.1em; opacity: 0.9;"></span>
+            </div>
+            <div style="margin-top: 30px;">
+              <a href="quotes.html" style="display: inline-block; padding: 12px 30px; background-color: white; color: #667eea; border-radius: 25px; text-decoration: none; font-weight: bold; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                Explore More Quotes
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section" style="background: #f8f9fa; padding: 60px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div style="text-align: center; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <i class="fa fa-envelope" style="font-size: 3em; color: indigo; margin-bottom: 20px;"></i>
+            <h3 style="margin-bottom: 15px; color: #333;">Subscribe to My Newsletter</h3>
+            <p style="color: #666; margin-bottom: 30px;">Get new stories and quotes delivered to your inbox. Join our growing community of readers!</p>
+            <form id="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required style="flex: 1; min-width: 250px; padding: 12px 20px; border: 2px solid #e0e0e0; border-radius: 25px; font-size: 1em; outline: none;" onfocus="this.style.borderColor='indigo'" onblur="this.style.borderColor='#e0e0e0'">
+                <button type="submit" style="padding: 12px 30px; background-color: indigo; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.backgroundColor='#5a4a9f'" onmouseout="this.style.backgroundColor='indigo'">
+                  Subscribe
+                </button>
+              </div>
+              <p id="newsletter-message" style="margin-top: 15px; font-size: 0.9em;"></p>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -474,16 +870,66 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
 
+  <script>
+    // Quote of the Day
+    const quotes = [
+      {text: "Every word written is a step towards touching someone's heart.", category: "Inspiration"},
+      {text: "Love is not just a feeling, it's a beautiful journey of two souls.", category: "Love"},
+      {text: "Life teaches us lessons through every experience, embrace them all.", category: "Life"},
+      {text: "In the silence of words, emotions speak the loudest.", category: "Poetry"},
+      {text: "Stories are bridges that connect hearts across distances.", category: "Writing"},
+      {text: "True happiness comes from making others smile.", category: "Happiness"},
+      {text: "Family is where life begins and love never ends.", category: "Family"},
+      {text: "Every sunrise brings new hope and endless possibilities.", category: "Inspiration"},
+      {text: "The pen is mightier when it writes with compassion.", category: "Writing"},
+      {text: "In every ending, there's a new beginning waiting.", category: "Life"}
+    ];
+    
+    function displayQuoteOfDay() {
+      const today = new Date().getDate();
+      const quote = quotes[today % quotes.length];
+      const quoteContainer = document.getElementById('quote-of-day');
+      quoteContainer.innerHTML = `
+        <p style="font-size: 1.5em; font-style: italic; margin-bottom: 20px; line-height: 1.6;">"${quote.text}"</p>
+        <span style="font-size: 1.1em; opacity: 0.9;">- ${quote.category}</span>
+      `;
+    }
+    
+    // Newsletter Form
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      const message = document.getElementById('newsletter-message');
+      
+      // Store in localStorage (in production, send to backend)
+      let subscribers = JSON.parse(localStorage.getItem('newsletter-subscribers') || '[]');
+      
+      if (subscribers.includes(email)) {
+        message.style.color = '#f8842b';
+        message.textContent = 'You are already subscribed!';
+      } else {
+        subscribers.push(email);
+        localStorage.setItem('newsletter-subscribers', JSON.stringify(subscribers));
+        message.style.color = '#28a745';
+        message.textContent = 'Thank you for subscribing! ✨';
+        document.getElementById('newsletter-email').value = '';
+      }
+      
+      setTimeout(() => {
+        message.textContent = '';
+      }, 5000);
+    });
+    
+    // Social media links
+    document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/917893961499?text=Hello%20CM-Writings";
+    document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
+    document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
+    document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
+    document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
+    document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
+    
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', displayQuoteOfDay);
+  </script>
 </body>
-
 </html>
-<script>
-  document.querySelector('.fa-whatsapp').parentElement.href = "https://wa.me/911234567890?text=Hello%20CM-Writings";
-</script>
-<script>
-  document.querySelector('.fa-facebook').parentElement.href = "https://www.facebook.com/CM-Writings";
-  document.querySelector('.fa-twitter').parentElement.href = "https://twitter.com/CM-Writings";
-  document.querySelector('.fa-linkedin').parentElement.href = "https://www.linkedin.com/company/CM-Writings";
-  document.querySelector('.fa-instagram').parentElement.href = "https://www.instagram.com/CM-Writings";
-  document.querySelector('.fa-youtube').parentElement.href = "https://www.youtube.com/@CmWritings";
-</script></script>
