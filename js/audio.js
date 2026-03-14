@@ -3,7 +3,7 @@ class AudioManager {
     constructor() {
         this.audio = null;
         this.isPlaying = false;
-        this.audioPath = 'audio/audio.mp4';
+        // this.audioPath = 'audio/audio.mp4';
         this.init();
     }
 
