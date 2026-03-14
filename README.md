@@ -7,28 +7,3 @@ CMWritingS is a collection of various writings, including stories, poems, and ar
 2. stories
 3. songs
 
-## Installation
-
-To get a local copy of the repository running on your machine:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/CMWritingS.git
-
-   cd CMWritingS
-Contributing
-Fork the repository.
-Create a new branch for your feature or bug fix:
-git checkout -b new-feature
-Make your changes and commit them:
-
-git commit -m "Add a new feature"
-Push to your forked repository:
-
-git push origin new-feature
-Submit a pull request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-Libraries used: Pillow, Flask
