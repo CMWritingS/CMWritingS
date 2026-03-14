@@ -96,13 +96,322 @@
   }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+  /* Navigation */
+  .navbar-brand span {
+    font-size: 20px !important;
+  }
+  
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    padding: 8px 12px !important;
+    font-size: 0.85rem;
+  }
+  
+  /* Page Banner */
+  .page-banner {
+    padding: 40px 0 30px !important;
+  }
+  
+  .page-banner h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .page-banner p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Hero Section */
+  .hero-card {
+    padding: 20px !important;
+  }
+  
+  .hero-card h1 {
+    font-size: 2rem !important;
+  }
+  
+  .hero-card p {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Buttons */
+  .btn-mod {
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Section Titles */
+  .section-title h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .section-title p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Cards */
+  .writing-card,
+  .quote-card-mod,
+  .stat-card,
+  .contact-info-card,
+  .contact-form-card {
+    margin-bottom: 20px !important;
+  }
+  
+  .card-img {
+    height: 150px !important;
+  }
+  
+  .card-body {
+    padding: 16px 12px !important;
+  }
+  
+  .card-body h5 {
+    font-size: 1rem !important;
+  }
+  
+  /* Category Menu */
+  .category-menu-wrapper {
+    padding: 20px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .category-menu-list {
+    gap: 8px !important;
+  }
+  
+  .category-menu-list a {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Gallery */
+  .gallery {
+    gap: 12px !important;
+  }
+  
+  .quote {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  /* Search Box */
+  .search-box {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .search-box input,
+  .search-box button {
+    width: 100% !important;
+  }
+  
+  /* Footer */
+  .footer_container {
+    padding-top: 40px !important;
+  }
+  
+  .footer-brand h4,
+  .footer-links h5,
+  .footer-contact h5,
+  .footer-newsletter h5 {
+    font-size: 0.95rem !important;
+  }
+  
+  .footer-brand p,
+  .footer-links a,
+  .footer-contact a,
+  .footer-newsletter p {
+    font-size: 0.85rem !important;
+  }
+  
+  .social-icons {
+    gap: 8px !important;
+  }
+  
+  .social-icons a {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Contact Form */
+  .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .form-control-mod {
+    padding: 10px 12px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  textarea.form-control-mod {
+    min-height: 100px !important;
+  }
+  
+  /* Stats */
+  .stat-card h3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .stat-card p {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Journey */
+  .journey-item {
+    flex-direction: column !important;
+    padding: 15px !important;
+  }
+  
+  .journey-year {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .journey-content h5 {
+    font-size: 0.95rem !important;
+  }
+  
+  .journey-content p {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Skills */
+  .skill-tag {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    margin: 4px !important;
+  }
+  
+  /* Newsletter */
+  .newsletter-card {
+    padding: 30px 20px !important;
+  }
+  
+  .newsletter-card h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .newsletter-form {
+    flex-direction: column !important;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100% !important;
+  }
+  
+  /* Quote Highlight */
+  .quote-highlight {
+    padding: 30px 20px !important;
+    margin: 30px 0 !important;
+  }
+  
+  .quote-highlight p {
+    font-size: 1.1rem !important;
+  }
+  
+  /* About Image */
+  .about-img {
+    margin-bottom: 30px !important;
+  }
+  
+  .about-badge {
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+  }
+}
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+  /* Extra small devices */
+  .page-banner h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .hero-card h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .section-title h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .quote {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  
+  .category-menu-list a {
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .navbar-brand span {
+    font-size: 18px !important;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem !important;
+  }
+}
 
-@media (max-width: 420px) {}
+@media (max-width: 420px) {
+  /* Very small devices */
+  .page-banner h1 {
+    font-size: 1.3rem !important;
+  }
+  
+  .hero-card h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  .quote {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .category-menu-list {
+    gap: 6px !important;
+  }
+  
+  .category-menu-list a {
+    padding: 5px 8px !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .btn-mod {
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+  }
+}
 
-@media (max-width: 376px) {}
+@media (max-width: 376px) {
+  /* Ultra small devices */
+  .page-banner {
+    padding: 30px 0 20px !important;
+  }
+  
+  .page-banner h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .quote {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  
+  .category-menu-wrapper {
+    padding: 15px !important;
+  }
+  
+  .category-menu-list a {
+    padding: 4px 6px !important;
+    font-size: 0.65rem !important;
+  }
+}
 
 @media (min-width: 1200px) {
   .container {
