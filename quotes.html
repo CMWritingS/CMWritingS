@@ -305,10 +305,7 @@
             if (loader) loader.remove();
         }
 
-        // Optimized image loading with lazy loading and caching
-        const imageCache = {};
-        const loadedImages = new Set();
-
+        // Optimized image loading
         function fetchAndLoadImages(galleryId, folder) {
             document.querySelectorAll('.gallery').forEach(g => g.style.display = 'none');
             const gallery = document.getElementById(galleryId);
@@ -317,13 +314,6 @@
             gallery.style.display = 'flex';
 
             showLoadingIndicator();
-
-            // Check cache first
-            if (imageCache[folder]) {
-                renderImages(gallery, imageCache[folder]);
-                hideLoadingIndicator();
-                return;
-            }
 
             let maxImages = 1000;
             let indexes = Array.from({length: maxImages}, (_, i) => i + 1);
@@ -335,53 +325,48 @@
             let shown = 0;
             let idx = 0;
             let loadedCount = 0;
-            const images = [];
 
             function tryNext() {
                 if (shown >= 20 || idx >= indexes.length) {
-                    if (shown === 0) hideLoadingIndicator();
+                    hideLoadingIndicator();
                     return;
                 }
                 const i = indexes[idx];
                 idx++;
                 const imgSrc = `images/quotes/${folder}/${folder}-image${i}.jpg`;
                 const thumbSrc = `images/quotes/${folder}/thumb/${folder}-image${i}.jpg`;
-                const cacheKey = thumbSrc;
-
-                // Skip if already loaded
-                if (loadedImages.has(cacheKey)) {
-                    tryNext();
-                    return;
-                }
 
                 const img = new Image();
-                img.loading = 'lazy';
                 img.src = thumbSrc;
                 img.alt = `Quote ${i}`;
                 img.style.cursor = "pointer";
                 img.onclick = function() { openLightbox(imgSrc); };
                 
                 img.onload = function() {
-                    loadedImages.add(cacheKey);
-                    images.push({img, imgSrc});
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'quote';
+                    imgDiv.appendChild(img);
+                    gallery.appendChild(imgDiv);
                     shown++;
                     loadedCount++;
                     if (loadedCount === 1) hideLoadingIndicator();
-                    renderImages(gallery, images);
                     tryNext();
                 };
                 
                 img.onerror = function() {
                     if (thumbSrc !== imgSrc) {
                         img.src = imgSrc;
-                        img.onerror = function() { tryNext(); };
+                        img.onerror = function() { 
+                            tryNext();
+                        };
                         img.onload = function() {
-                            loadedImages.add(cacheKey);
-                            images.push({img, imgSrc});
+                            const imgDiv = document.createElement('div');
+                            imgDiv.className = 'quote';
+                            imgDiv.appendChild(img);
+                            gallery.appendChild(imgDiv);
                             shown++;
                             loadedCount++;
                             if (loadedCount === 1) hideLoadingIndicator();
-                            renderImages(gallery, images);
                             tryNext();
                         };
                     } else {
@@ -390,16 +375,6 @@
                 };
             }
             tryNext();
-        }
-
-        function renderImages(gallery, images) {
-            gallery.innerHTML = '';
-            images.forEach(({img, imgSrc}) => {
-                const imgDiv = document.createElement('div');
-                imgDiv.className = 'quote';
-                imgDiv.appendChild(img);
-                gallery.appendChild(imgDiv);
-            });
         }
 
         function openLightbox(src) {
